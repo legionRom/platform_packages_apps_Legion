@@ -27,7 +27,7 @@
         android:key="heads_up_notifications"
         android:title="@string/heads_up_notifications"
         android:summary="@string/heads_up_summary"
-        android:fragment="com.msm.xtended.fragments.HeadsUpSettings" />
+        android:fragment="com.lean.settings.fragments.HeadsUpSettings" />
 
    <PreferenceCategory
         android:title="@string/light_settings_header" >
@@ -36,7 +36,7 @@
             android:key="charging_light"
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_summary"
-            android:fragment="com.msm.xtended.fragments.BatteryLightSettings" />
+            android:fragment="com.lean.settings.fragments.BatteryLightSettings" />
 
      </PreferenceCategory>
 
