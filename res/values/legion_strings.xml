@@ -871,5 +871,9 @@
     <string name="battery_blend_end">Full</string>
     <string name="battery_blend_between">Between</string>
 
+    <!-- Bluetooth battery status --> 
+    <string name="bluetooth_battery_title">Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Display battery level for the connected bluetooth device, if available</string>
+
 </resources>
 

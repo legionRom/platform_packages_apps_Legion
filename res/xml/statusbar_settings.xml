@@ -42,4 +42,11 @@
             android:title="@string/battery_bar_title"
             android:summary="@string/battery_bar_summary"
             android:defaultValue="false" />
+
+        <com.legion.settings.preference.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
 </PreferenceScreen>
