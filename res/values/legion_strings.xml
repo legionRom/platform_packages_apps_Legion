@@ -843,6 +843,9 @@
     <string name="battery_light_medium_color">Medium battery</string>
     <string name="battery_light_full_color">Almost full battery</string>
     <string name="battery_light_reallyfull_color">Full battery</string>
-    <string name="default_string">Default</string>
+
+    <!-- Bluetooth battery status --> 
+    <string name="bluetooth_battery_title">Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Display battery level for the connected bluetooth device, if available</string>
 
 </resources>
