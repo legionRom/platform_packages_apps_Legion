@@ -471,4 +471,6 @@
     <string name="themesui_title">ThemesUi</string>
     <string name="themesui_summary">Ui sections</string>
 
+    <string name="anbi_title">Accidental touch</string>
+    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
 </resources>
