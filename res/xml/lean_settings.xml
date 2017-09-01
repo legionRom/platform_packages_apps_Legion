@@ -18,21 +18,21 @@
     android:title="@string/lean_settings_title" >
 
         <!-- Buttons -->
-        <PreferenceScreen
+        <Preference
             android:key="buttonsettings_category"
             android:title="@string/button_title"
             android:fragment="com.lean.settings.fragments.ButtonSettings"
             android:icon="@drawable/ic_settings_buttons"/>
 
         <!-- Navigation Bar -->
-        <PreferenceScreen
+        <Preference
             android:key="navigationbar_category"
             android:title="@string/navbar_title" 
             android:fragment="com.lean.settings.fragments.NavbarSettings"
             android:icon="@drawable/ic_settings_navbar"/>
 
         <!-- Power Menu -->
-        <PreferenceScreen
+        <Preference
             android:key="powermenu__category"
             android:title="@string/powermenu_title" 
             android:fragment="com.lean.settings.fragments.PowerMenuSettings"
