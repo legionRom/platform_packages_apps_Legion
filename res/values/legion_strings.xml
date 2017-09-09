@@ -114,7 +114,7 @@
     <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
     <string name="torch_power_button_gesture_lp">Long press power button</string>
 
-<!-- Color Picker -->
+    <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
     <string name="arrow_right">→</string>
@@ -228,7 +228,18 @@
     <string name="show_lte_fourgee_title">4G icon</string>
     <string name="show_lte_fourgee_summary">Display 4G icon in signal icon instead LTE</string>
 
-  <!-- Lockscreen battery info indicator -->
+   <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
- </resources>
+
+    <string name="aosp_gesture_preference">AOSP Gestures</string>
+    <string name="aosp_gesture_summary">Gestures Settings of AOSP</string>
+
+    <!-- Double Tap -->
+
+    <string name="dtts_category_header">Double tap to sleep</string>
+
+    <!-- Double Tap Lockscreen to Sleep -->
+    <string name="double_tap_to_sleep_lockscreen_title">Lockscreen</string> 
+    <string name="double_tap_to_sleep_lockscreen_summary">Double tap on the lock screen to put the device to sleep</string>
+</resources>
