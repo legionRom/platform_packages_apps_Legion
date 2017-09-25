@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+	android:title="@string/notifications_title">
+
+    <!-- Heads up -->
+<Preference 
+        android:key="heads_up_notifications" 
+        android:title="@string/heads_up_notifications" 
+        android:summary="@string/heads_up_summary"
+        android:fragment="com.legion.settings.HeadsUpSettings" />
+</PreferenceScreen>
