@@ -48,6 +48,12 @@
             android:summary="@string/fp_unlock_keystore_summary"
             android:defaultValue="false" />
 
+        <com.legion.settings.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_show_status_bar"
+            android:title="@string/lockscreen_show_status_bar_title"
+            android:summary="@string/lockscreen_show_status_bar_summary"
+            android:defaultValue="true" />
+
     <!-- FOD customization options -->
   <PreferenceCategory
         android:key="fod_icon_picker_category"
