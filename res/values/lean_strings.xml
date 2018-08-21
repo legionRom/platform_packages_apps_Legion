@@ -194,5 +194,12 @@
     <string name="powermenu_logout">Logout</string>
     <string name="powermenu_torch">Flashlight</string>
 
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Navbar Buttons</string>
+    <string name="navbar_visibility_summary">Show Navigation Buttons</string>
+
+    <!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Navbar Tuner</string>
+
 </resources>
 

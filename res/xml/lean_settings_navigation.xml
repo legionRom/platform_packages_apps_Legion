@@ -18,12 +18,16 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
-         <!-- Edge gestures -->
-         <com.lean.settings.preferences.CardviewPreference
-            android:id="@+id/edge_gestures"
-            android:key="edge_gestures"
-            android:fragment="com.lean.settings.fragments.EdgeGesturesSettings"
-            android:title="@string/edge_gestures_title"
-            android:icon="@drawable/ic_edge_gestures"/>
+    <SwitchPreference
+        android:key="navbar_visibility"
+        android:title="@string/navbar_visibility"
+        android:summary="@string/navbar_visibility_summary" />
+
+    <Preference
+            android:title="@string/navbar_tuner_title" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.NavBarActivity" />
+    </Preference>
 
 </PreferenceScreen>
