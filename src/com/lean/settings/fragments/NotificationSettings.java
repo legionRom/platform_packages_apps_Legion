@@ -21,6 +21,7 @@ import android.provider.Settings;
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private ListPreference mFlashlightOnCall;
+    private Preference mChargingLeds;
 
      @Override
     public void onCreate(Bundle icicle) {
@@ -29,7 +30,14 @@ import android.provider.Settings;
          addPreferencesFromResource(R.xml.lean_settings_notifications);
 
          PreferenceScreen prefScreen = getPreferenceScreen();
-        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        mChargingLeds = (Preference) findPreference("charging_light");
+         if (mChargingLeds != null
+                 && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(mChargingLeds);
+        }
+
+      mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
         int flashlightValue = Settings.System.getInt(getContentResolver(),
                 Settings.System.FLASHLIGHT_ON_CALL, 1);

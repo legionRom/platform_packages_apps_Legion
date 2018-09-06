@@ -22,4 +22,15 @@
             android:entries="@array/flashlight_on_call_entries"
             android:entryValues="@array/flashlight_on_call_values" />
 
+   <PreferenceCategory
+        android:title="@string/light_settings_header" >
+
+         <Preference
+            android:key="charging_light"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.msm.xtended.fragments.BatteryLightSettings" />
+
+     </PreferenceCategory>
+
  </PreferenceScreen>
