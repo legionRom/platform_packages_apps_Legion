@@ -42,9 +42,13 @@ import com.lean.settings.preferences.Utils;
 
     private static final String KEY_FACE_AUTO_UNLOCK = "face_auto_unlock";
     private static final String KEY_FACE_UNLOCK_PACKAGE = "com.android.facelock";
-     private SwitchPreference mFaceUnlock;
+    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
 
-     @Override
+    private FingerprintManager mFingerprintManager;
+    private SwitchPreference mFingerprintVib;
+    private SwitchPreference mFaceUnlock;
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.lean_settings_lockscreen);
@@ -61,6 +65,16 @@ import com.lean.settings.preferences.Utils;
                     Settings.Secure.FACE_AUTO_UNLOCK, 0) == 1));
             mFaceUnlock.setOnPreferenceChangeListener(this);
         }
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        if (!mFingerprintManager.isHardwareDetected()){
+            prefScreen.removePreference(mFingerprintVib);
+        } else {
+        mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
+        mFingerprintVib.setOnPreferenceChangeListener(this);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -70,6 +84,11 @@ import com.lean.settings.preferences.Utils;
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.FACE_AUTO_UNLOCK, value ? 1 : 0);
+            return true;
+        } else if (preference == mFingerprintVib) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
             return true;
         }
         return false;
