@@ -34,8 +34,16 @@ import android.support.v7.preference.PreferenceScreen;
  import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.lean.settings.preferences.Utils;
+
  public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_FACE_AUTO_UNLOCK = "face_auto_unlock";
+    private static final String KEY_FACE_UNLOCK_PACKAGE = "com.android.facelock";
+     private SwitchPreference mFaceUnlock;
+
      @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -44,9 +52,27 @@ import com.android.settings.SettingsPreferenceFragment;
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
      }
-     public boolean onPreferenceChange(Preference preference, Object newValue) {
+
+        mFaceUnlock = (SwitchPreference) findPreference(KEY_FACE_AUTO_UNLOCK);
+        if (!Utils.isPackageInstalled(getActivity(), KEY_FACE_UNLOCK_PACKAGE)){
+            prefScreen.removePreference(mFaceUnlock);
+        } else {
+            mFaceUnlock.setChecked((Settings.Secure.getInt(getContext().getContentResolver(),
+                    Settings.Secure.FACE_AUTO_UNLOCK, 0) == 1));
+            mFaceUnlock.setOnPreferenceChangeListener(this);
+        }
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-         return false;
+
+        if (preference == mFaceUnlock) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.FACE_AUTO_UNLOCK, value ? 1 : 0);
+            return true;
+        }
+        return false;
     }
      @Override
     public int getMetricsCategory() {
@@ -54,4 +80,3 @@ import com.android.settings.SettingsPreferenceFragment;
     }
 
 }
-
