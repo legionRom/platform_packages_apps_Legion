@@ -22,6 +22,13 @@
             android:entries="@array/flashlight_on_call_entries"
             android:entryValues="@array/flashlight_on_call_values" />
 
+    <!-- Heads up -->
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_summary"
+        android:fragment="com.msm.xtended.fragments.HeadsUpSettings" />
+
    <PreferenceCategory
         android:title="@string/light_settings_header" >
 
