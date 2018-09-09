@@ -20,4 +20,10 @@
         android:fragment="com.lean.settings.QsRowsColumns"
         android:title="@string/qs_rows_columns_title"/>
 
+    <com.lean.settings.preferences.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false" />
+
  </PreferenceScreen>
