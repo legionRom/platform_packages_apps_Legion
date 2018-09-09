@@ -20,8 +20,9 @@
 
     <PreferenceScreen
         android:key="volume_key"
-        android:fragment="com.lean.settings.fragments.VolumeRockerSettings"
-        android:title="@string/volume_title" />
+        android:title="@string/volume_title"
+        android:summary="@string/volume_summary"
+        android:fragment="com.lean.settings.fragments.VolumeRockerSettings" />
 
     <PreferenceCategory
         android:key="back_key"
