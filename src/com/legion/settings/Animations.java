@@ -22,9 +22,11 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import android.os.SystemProperties;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+import android.widget.Toast;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.legion.AwesomeAnimationHelper;
@@ -49,12 +51,14 @@ public class Animations extends SettingsPreferenceFragment implements
     private static final String WALLPAPER_CLOSE = "wallpaper_close";
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
     private CustomSeekBarPreference mAnimDuration;
+    private ListPreference mToastAnimation;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -70,6 +74,7 @@ public class Animations extends SettingsPreferenceFragment implements
     private int[] mAnimations;
     private String[] mAnimationsStrings;
     private String[] mAnimationsNum;
+    private Context mContext;
 
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
@@ -83,6 +88,7 @@ public class Animations extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.legion_settings_animations);
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+	mContext = getActivity();
 
         mAnimDuration = (CustomSeekBarPreference) findPreference(ANIMATION_DURATION);
         int animdef = Settings.Global.getInt(resolver,
@@ -186,6 +192,13 @@ public class Animations extends SettingsPreferenceFragment implements
         updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
         updateAnimTileStyle(tileAnimationStyle);
+
+        mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.Global.getInt(getContentResolver(), Settings.Global.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+        mToastAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -280,6 +293,11 @@ public class Animations extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_INTERPOLATOR,
                     tileAnimationInterpolator, UserHandle.USER_CURRENT);
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
+        } else if (preference == mToastAnimation) {
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.Global.putString(getContentResolver(), Settings.Global.TOAST_ANIMATION, (String) newValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
             return true;
         }
         return false;
