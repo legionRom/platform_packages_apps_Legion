@@ -40,6 +40,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.legion.settings.preference.ActionFragment;
 import com.legion.settings.preference.CustomSeekBarPreference;
 
+import com.legion.settings.preference.SystemSettingSwitchPreference;
+
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
 
 private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
@@ -51,6 +53,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String KEY_BUTTON_SWAP_KEYS = "swap_navigation_keys";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -76,6 +79,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
+    private SystemSettingSwitchPreference mSwapKeysPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -97,6 +101,9 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     UserHandle.USER_CURRENT);
             mHwKeyDisable.setChecked(keysDisabled != 0);
             mHwKeyDisable.setOnPreferenceChangeListener(this);
+
+        mSwapKeysPreference = (SystemSettingSwitchPreference) prefScreen.findPreference(
+                KEY_BUTTON_SWAP_KEYS);
 
             final boolean variableBrightness = getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
