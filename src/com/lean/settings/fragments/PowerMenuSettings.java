@@ -64,7 +64,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN_SETTINGS;
+        return MetricsProto.MetricsEvent.LEAN;
     }
 
 }
