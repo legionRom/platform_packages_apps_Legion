@@ -843,7 +843,6 @@
     <string name="battery_light_medium_color">Medium battery</string>
     <string name="battery_light_full_color">Almost full battery</string>
     <string name="battery_light_reallyfull_color">Full battery</string>
-    <string name="default_string">Default</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery bar</string>
@@ -878,6 +877,15 @@
     <!-- Show statusbar on lockscreen -->
     <string name="lockscreen_show_status_bar_title">Statusbar</string>
     <string name="lockscreen_show_status_bar_summary">Show statusbar on the lockscreen</string>
+
+    <!-- Color Blend -->
+    <string name="color_blend_ok">@android:string/ok</string>
+    <string name="color_blend_cancel">@android:string/cancel</string>
+    <string name="color_blend_reset">Reset</string>
+    <string name="color_blend_preview">Preview: %1$d%%</string>
+    <string name="color_preview_start">Start</string>
+    <string name="color_preview_end">End</string>
+    <string name="color_preview_between">Between</string>
 
 </resources>
 
