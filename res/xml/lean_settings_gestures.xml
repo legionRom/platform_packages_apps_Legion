@@ -14,4 +14,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+         <!-- Edge gestures -->
+         <com.lean.settings.preferences.CardviewPreference
+             android:id="@+id/edge_gestures"
+             android:key="edge_gestures"
+             android:fragment="com.lean.settings.fragments.EdgeGesturesSettings"
+             android:title="@string/edge_gestures_title"
+             android:icon="@drawable/ic_edge_gestures"/>
+ 
  </PreferenceScreen>
