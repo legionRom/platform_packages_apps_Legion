@@ -25,7 +25,7 @@ import java.util.ArrayList;
      @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-         addPreferencesFromResource(R.xml.lean_settings_quicksettings);
+         addPreferencesFromResource(R.xml.beast_settings_quicksettings);
          PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
          }
@@ -35,6 +35,6 @@ import java.util.ArrayList;
     }
      @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
  }

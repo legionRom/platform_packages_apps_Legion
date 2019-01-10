@@ -54,7 +54,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.lean_settings_power);
+        addPreferencesFromResource(R.xml.beast_settings_power);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -83,7 +83,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
 }

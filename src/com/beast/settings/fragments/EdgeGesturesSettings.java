@@ -60,7 +60,7 @@ public class EdgeGesturesSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
     @Override

@@ -7,10 +7,10 @@ import com.android.settings.R;
      @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         addPreferencesFromResource(R.xml.lean_settings_gestures);
+         addPreferencesFromResource(R.xml.beast_settings_gestures);
     }
      @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
  }

@@ -52,7 +52,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lean_settings_navigation);
+        addPreferencesFromResource(R.xml.beast_settings_navigation);
 
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
 
@@ -95,6 +95,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 }

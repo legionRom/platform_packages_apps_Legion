@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2016 The Pure Nexus Project
- * used for LeanOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +28,7 @@ import com.android.settings.R;
 
 import com.android.settings.SettingsPreferenceFragment;
 
-public class LeanSettings extends SettingsPreferenceFragment {
+public class BeastSettings extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -40,7 +39,7 @@ public class LeanSettings extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
     public static void lockCurrentOrientation(Activity activity) {

@@ -165,13 +165,13 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
     @Override
     public int getDialogMetricsCategory(int dialogId) {
         if (dialogId == DIALOG_STOPLIST_APPS || dialogId == DIALOG_BLACKLIST_APPS ) {
-            return MetricsProto.MetricsEvent.LEAN;
+            return MetricsProto.MetricsEvent.BEAST;
         }
         return 0;
     }

@@ -22,7 +22,7 @@ import java.util.HashSet;
      @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-         addPreferencesFromResource(R.xml.lean_settings_recents);
+         addPreferencesFromResource(R.xml.beast_settings_recents);
          ContentResolver resolver = getActivity().getContentResolver();
      }
      @Override
@@ -31,6 +31,6 @@ import java.util.HashSet;
      }
      @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 }

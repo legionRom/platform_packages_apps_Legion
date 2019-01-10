@@ -20,7 +20,7 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.lean_settings_volume);
+        addPreferencesFromResource(R.xml.beast_settings_volume);
 
     }
 
@@ -32,6 +32,6 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 }

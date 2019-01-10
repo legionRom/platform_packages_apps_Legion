@@ -165,7 +165,7 @@ public class ActionFragment extends SettingsPreferenceFragment implements
         switch (dialogId) {
             case DIALOG_CATEGORY:
             case DIALOG_CUSTOM_ACTIONS:
-                return MetricsEvent.LEAN;
+                return MetricsEvent.BEAST;
             default:
                 return 0;
         }
@@ -256,6 +256,6 @@ public class ActionFragment extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 }

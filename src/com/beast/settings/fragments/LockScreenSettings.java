@@ -51,7 +51,7 @@ import com.beast.settings.preferences.Utils;
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lean_settings_lockscreen);
+        addPreferencesFromResource(R.xml.beast_settings_lockscreen);
          ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
@@ -94,7 +94,7 @@ import com.beast.settings.preferences.Utils;
     }
      @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
 }

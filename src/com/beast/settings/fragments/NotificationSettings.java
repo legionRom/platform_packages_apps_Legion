@@ -27,7 +27,7 @@ import android.provider.Settings;
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-         addPreferencesFromResource(R.xml.lean_settings_notifications);
+         addPreferencesFromResource(R.xml.beast_settings_notifications);
 
          PreferenceScreen prefScreen = getPreferenceScreen();
         mChargingLeds = (Preference) findPreference("charging_light");
@@ -66,6 +66,6 @@ import android.provider.Settings;
 
      @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 }

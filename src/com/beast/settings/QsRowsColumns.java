@@ -69,7 +69,7 @@ public class QsRowsColumns extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

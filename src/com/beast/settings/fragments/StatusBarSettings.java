@@ -42,7 +42,7 @@ import java.util.Collections;
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lean_settings_statusbar);
+        addPreferencesFromResource(R.xml.beast_settings_statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
 
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -81,6 +81,6 @@ import java.util.Collections;
     }
      @Override
      public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
  }

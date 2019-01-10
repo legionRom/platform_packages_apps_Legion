@@ -65,7 +65,7 @@ public class ButtonSettings extends ActionFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lean_settings_button);
+        addPreferencesFromResource(R.xml.beast_settings_button);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
          // bits for hardware keys present on device
@@ -121,7 +121,7 @@ public class ButtonSettings extends ActionFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEAN;
+        return MetricsProto.MetricsEvent.BEAST;
     }
 
 }
