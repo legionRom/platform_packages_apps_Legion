@@ -56,11 +56,11 @@
             android:fragment="com.beast.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/>
          <!-- Recents -->
-        <PreferenceScreen
+        <!--PreferenceScreen
             android:key="recents_category"
             android:title="@string/recents_title"
             android:fragment="com.beast.settings.fragments.RecentsSettings"
-            android:icon="@drawable/ic_settings_recents"/>
+            android:icon="@drawable/ic_settings_recents"-->
          <!-- Notifications -->
         <PreferenceScreen
             android:key="notifications_category"
@@ -68,9 +68,9 @@
             android:fragment="com.beast.settings.fragments.NotificationSettings"
             android:icon="@drawable/ic_settings_notifications"/>
          <!-- Misc -->
-        <PreferenceScreen
+        <!--PreferenceScreen
             android:key="misc_category"
             android:title="@string/misc_title" 
             android:fragment="com.beast.settings.fragments.MiscSettings"
-            android:icon="@drawable/ic_settings_miscs"/>
+            android:icon="@drawable/ic_settings_miscs"-->
  </PreferenceScreen>
