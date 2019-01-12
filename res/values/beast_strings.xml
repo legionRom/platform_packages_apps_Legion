@@ -222,6 +222,8 @@
     <string name="network_traffic_state_title">Network Traffic</string>
     <string name="network_traffic_state_summary">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+	
+    <string name="device_part_title">Device</string>
     
 </resources>
 
