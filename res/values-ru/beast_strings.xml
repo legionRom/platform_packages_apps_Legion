@@ -229,6 +229,13 @@
     <string name="double_tap_to_sleep_lockscreen_summary">Дважды коснитесь нижней части экрана блокировки для перевода устройства в спящий режим</string>
     <string name="double_tap_to_sleep_title">Строка состояния</string>
     <string name="double_tap_to_sleep_summary">Двойное нажатие по строке состояния переводит устройство в спящий режим</string>
+	
+    <!-- Rounded corners -->
+    <string name="corners_category">Скругление углов</string>
+    <string name="corner_radius">Радиус скругленного угла</string>
+    <string name="content_padding">Отступ от угла</string>
+    <string name="corner_fwvals">Использовать базовые значения</string>
+    <string name="corner_fwvals_summary">Полезно если устройство по умолчанию имеет скругленные углы</string>
     
 </resources>
 
