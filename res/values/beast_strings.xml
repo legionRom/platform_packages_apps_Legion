@@ -238,6 +238,11 @@
     <string name="content_padding">Corner content padding</string>
     <string name="corner_fwvals">Use framework values</string>
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
+	
+    <!-- AOSP Recents component Style -->
+    <string name="recents_component_type_title">Recents Style</string>
+    <string name="recents_pie">Pie</string>
+    <string name="recents_oreo">Oreo</string>
     
 </resources>
 

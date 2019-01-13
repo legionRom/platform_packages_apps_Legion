@@ -236,6 +236,9 @@
     <string name="content_padding">Отступ от угла</string>
     <string name="corner_fwvals">Использовать базовые значения</string>
     <string name="corner_fwvals_summary">Полезно если устройство по умолчанию имеет скругленные углы</string>
+	
+    <!-- AOSP Recents component Style -->
+    <string name="recents_component_type_title">Стиль списка недавних</string>
     
 </resources>
 
