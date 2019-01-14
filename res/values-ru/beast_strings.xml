@@ -239,6 +239,10 @@
 	
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Стиль списка недавних</string>
+	
+    <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Требуется перезагрузка UI</string>
+    <string name="systemui_restart_message">Для применения изменений, требуется перезагрузка UI. Перезагрузить сейчас?</string>
 
     <!--3-Finger screenshot-->
     <string name="three_finger_gesture">Жест тремя пальцами</string>

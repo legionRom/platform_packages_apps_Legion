@@ -243,6 +243,10 @@
     <string name="recents_component_type_title">Recents Style</string>
     <string name="recents_pie">Pie</string>
     <string name="recents_oreo">Oreo</string>
+
+    <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
 	
     <!--3-Finger screenshot-->
     <string name="three_finger_gesture">Three finger gesture</string>
