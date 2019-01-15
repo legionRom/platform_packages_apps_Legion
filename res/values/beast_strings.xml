@@ -261,6 +261,14 @@
     <string name="torch_long_press_power_timeout_2min">2 minutes</string>
     <string name="torch_long_press_power_timeout_5min">5 minutes</string>
     <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+	
+    <!-- Weather -->
+    <string name="weather_title">Weather</string>
+    <string name="show_weather_on_ls_title">Show Weather on Lockscreen</string>
+    <string name="show_weather_on_ls_summary">Adds the weather info close to the date on your lockscreen</string>
+    <string name="weather_unit">Temperature unit</string>
+    <string name="weather_unit_metric" translatable="false">Celsius</string>
+    <string name="weather_unit_imperial" translatable="false">Fahrenheit</string>
     
 </resources>
 

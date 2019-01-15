@@ -43,10 +43,13 @@ import com.beast.settings.preferences.Utils;
     private static final String KEY_FACE_AUTO_UNLOCK = "face_auto_unlock";
     private static final String KEY_FACE_UNLOCK_PACKAGE = "com.android.facelock";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String WEATHER_UNIT = "weather_lockscreen_unit";
 
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFaceUnlock;
+	
+    ListPreference mWeatherUnit;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,6 +77,11 @@ import com.beast.settings.preferences.Utils;
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
         mFingerprintVib.setOnPreferenceChangeListener(this);
         }
+        mWeatherUnit = (ListPreference) findPreference(WEATHER_UNIT);
+        mWeatherUnit.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.WEATHER_LOCKSCREEN_UNIT, 0)));
+        mWeatherUnit.setSummary(mWeatherUnit.getEntry());
+        mWeatherUnit.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -88,6 +96,12 @@ import com.beast.settings.preferences.Utils;
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        } else if (preference == mWeatherUnit) {
+            Settings.System.putInt(getContentResolver(), Settings.System.WEATHER_LOCKSCREEN_UNIT,
+                    Integer.valueOf((String) newValue));
+            mWeatherUnit.setValue(String.valueOf(newValue));
+            mWeatherUnit.setSummary(mWeatherUnit.getEntry());
             return true;
         }
         return false;
