@@ -278,6 +278,10 @@
     <string name="audio_panel_view_alarm_title">Alarm</string>
     <string name="audio_panel_view_voice_title">Voice</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
+	
+    <!-- OP Gestures  -->
+    <string name="use_bottom_gesture_title">Navigation gestures</string>
+    <string name="use_bottom_gesture_summary">Use bottom swipe up gestures for navigation</string>
     
 </resources>
 
