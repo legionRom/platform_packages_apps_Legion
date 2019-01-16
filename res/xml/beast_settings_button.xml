@@ -24,6 +24,12 @@
         android:summary="@string/volume_summary"
         android:fragment="com.beast.settings.fragments.VolumeRockerSettings" />
 		
+    <com.beast.settings.preferences.SystemSettingSwitchPreference
+        android:key="volume_rocker_wake"
+        android:summary="@string/volume_rocker_wake_summary"
+        android:title="@string/volume_rocker_wake_title"
+        android:defaultValue="false" />
+		
     <PreferenceCategory
         android:key="vol_power_category"
         android:title="@string/powermenu_title">
