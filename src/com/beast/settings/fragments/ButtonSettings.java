@@ -47,8 +47,10 @@ public class ButtonSettings extends ActionFragment implements
 			
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String HWKEY_DISABLE = "hardware_keys_disable";
 			
     // category keys
+    private static final String CATEGORY_HWKEY = "hardware_keys";
     private static final String CATEGORY_BACK = "back_key";
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
@@ -69,6 +71,7 @@ public class ButtonSettings extends ActionFragment implements
 	
     private ListPreference mTorchLongPressPowerTimeout;
     private ListPreference mVolumeKeyCursorControl;
+    private SwitchPreference mHwKeyDisable;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -76,6 +79,13 @@ public class ButtonSettings extends ActionFragment implements
         addPreferencesFromResource(R.xml.beast_settings_button);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+		
+        int keysDisabled = 0;
+            mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
+            keysDisabled = Settings.Secure.getIntForUser(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
+                    UserHandle.USER_CURRENT);
+            mHwKeyDisable.setChecked(keysDisabled != 0);
+            mHwKeyDisable.setOnPreferenceChangeListener(this);
 		
         // volume key cursor control
         mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
@@ -131,6 +141,9 @@ public class ButtonSettings extends ActionFragment implements
          // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
 		
+        // load preferences first
+        setActionPreferencesEnabled(keysDisabled == 0);
+		
         mTorchLongPressPowerTimeout =
                     (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
         final PreferenceCategory mPowerMenuButtonsCategory =
@@ -170,6 +183,11 @@ public class ButtonSettings extends ActionFragment implements
                     .findIndexOfValue(volumeKeyCursorControl);
             mVolumeKeyCursorControl
                     .setSummary(mVolumeKeyCursorControl.getEntries()[volumeKeyCursorControlIndex]);
+            return true;
+        } else if (preference == mHwKeyDisable) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE, value ? 1 : 0);
+            setActionPreferencesEnabled(!value);
             return true;
 		}
         return false;
