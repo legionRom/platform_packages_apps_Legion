@@ -265,6 +265,15 @@
     <string name="weather_unit">Градусы</string>
     <string name="weather_unit_metric" translatable="false">Цельсия</string>
     <string name="weather_unit_imperial" translatable="false">Фаренгейта</string>
+	
+    <!-- Audio Panel view  -->
+    <string name="audio_panel_view">Панель звука</string>
+    <string name="audio_panel_view_media_title">Медиа</string>
+    <string name="audio_panel_view_ringer_title">Рингтон</string>
+    <string name="audio_panel_view_notification_title">Уведомления</string>
+    <string name="audio_panel_view_alarm_title">Будильник</string>
+    <string name="audio_panel_view_voice_title">Голос</string>
+    <string name="audio_panel_view_bt_sco_title">Блютуз</string>
     
 </resources>
 

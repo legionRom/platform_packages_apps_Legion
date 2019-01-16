@@ -68,11 +68,11 @@
             android:fragment="com.beast.settings.fragments.NotificationSettings"
             android:icon="@drawable/ic_settings_notifications"/>
          <!-- Misc -->
-        <!--PreferenceScreen
+        <PreferenceScreen
             android:key="misc_category"
             android:title="@string/misc_title" 
             android:fragment="com.beast.settings.fragments.MiscSettings"
-            android:icon="@drawable/ic_settings_miscs"-->
+            android:icon="@drawable/ic_settings_miscs"/>
         <!-- Device Part -->
         <Preference
             android:key="device_part"
