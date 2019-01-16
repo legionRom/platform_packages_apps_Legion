@@ -91,7 +91,7 @@ import com.beast.settings.preferences.Utils;
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.RECENTS_LAYOUT_STYLE, style, UserHandle.USER_CURRENT);
             mRecentsType.setSummary(mRecentsType.getEntries()[index]);
-            BeastUtils.showSystemUiRestartDialog(getContext());
+            Utils.showSystemUiRestartDialog(getContext());
         return true;
         }
      return false;
