@@ -45,8 +45,8 @@ import com.beast.settings.preferences.ActionFragment;
 public class ButtonSettings extends ActionFragment implements
         Preference.OnPreferenceChangeListener{
 			
-    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
-            "torch_long_press_power_timeout";
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
+    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 			
     // category keys
     private static final String CATEGORY_BACK = "back_key";
@@ -68,6 +68,7 @@ public class ButtonSettings extends ActionFragment implements
     public static final int KEY_MASK_VOLUME = 0x40;
 	
     private ListPreference mTorchLongPressPowerTimeout;
+    private ListPreference mVolumeKeyCursorControl;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -75,6 +76,17 @@ public class ButtonSettings extends ActionFragment implements
         addPreferencesFromResource(R.xml.beast_settings_button);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+		
+        // volume key cursor control
+        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
+        if (mVolumeKeyCursorControl != null) {
+            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
+            int volumeRockerCursorControl = Settings.System.getInt(getContentResolver(),
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+            mVolumeKeyCursorControl.setValue(Integer.toString(volumeRockerCursorControl));
+           mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
+        }
+		
          // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
@@ -148,6 +160,16 @@ public class ButtonSettings extends ActionFragment implements
                     .findIndexOfValue(TorchTimeout);
             mTorchLongPressPowerTimeout
                     .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            String volumeKeyCursorControl = (String) newValue;
+            int volumeKeyCursorControlValue = Integer.parseInt(volumeKeyCursorControl);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, volumeKeyCursorControlValue);
+            int volumeKeyCursorControlIndex = mVolumeKeyCursorControl
+                    .findIndexOfValue(volumeKeyCursorControl);
+            mVolumeKeyCursorControl
+                    .setSummary(mVolumeKeyCursorControl.getEntries()[volumeKeyCursorControlIndex]);
             return true;
 		}
         return false;
