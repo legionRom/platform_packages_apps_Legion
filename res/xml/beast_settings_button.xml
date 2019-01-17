@@ -18,9 +18,31 @@
         android:title="@string/button_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 		
+    <PreferenceCategory
+        android:key="hardware_keys"
+        android:title="@string/hardware_keys_category" >
+		
         <SwitchPreference
             android:key="hardware_keys_disable"
             android:title="@string/hardware_keys_disable_title" />
+
+        <com.beast.settings.preferences.CustomSeekBarPreference
+            android:key="button_brightness"
+            android:title="@string/button_brightness_title"
+            android:max="255"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false" />
+
+        <ListPreference
+            android:dialogTitle="@string/backlight_timeout_title"
+            android:entries="@array/backlight_timeout_entries"
+            android:entryValues="@array/backlight_timeout_values"
+            android:key="backlight_timeout"
+            android:persistent="false"
+            android:title="@string/backlight_timeout_title" />
+
+    </PreferenceCategory>
 		
    <PreferenceCategory
         android:key="volume_category"
@@ -44,7 +66,6 @@
         android:summary="@string/volume_rocker_wake_summary"
         android:title="@string/volume_rocker_wake_title"
         android:defaultValue="false" />
-
 
     </PreferenceCategory>
 

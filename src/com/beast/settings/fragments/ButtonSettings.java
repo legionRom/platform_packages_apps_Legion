@@ -36,6 +36,8 @@ import com.android.settings.R;
 
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.beast.settings.preferences.CustomSeekBarPreference;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
@@ -48,6 +50,8 @@ public class ButtonSettings extends ActionFragment implements
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
+    private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
 			
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -72,6 +76,8 @@ public class ButtonSettings extends ActionFragment implements
     private ListPreference mTorchLongPressPowerTimeout;
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mHwKeyDisable;
+    private ListPreference mBacklightTimeout;
+    private CustomSeekBarPreference mButtonBrightness;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -79,6 +85,26 @@ public class ButtonSettings extends ActionFragment implements
         addPreferencesFromResource(R.xml.beast_settings_button);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+		
+        mBacklightTimeout =
+                (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
+        mButtonBrightness =
+                (CustomSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
+
+        if (mBacklightTimeout != null) {
+            mBacklightTimeout.setOnPreferenceChangeListener(this);
+            int BacklightTimeout = Settings.System.getInt(getContentResolver(),
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 5000);
+            mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
+            mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
+        }
+
+        if (mButtonBrightness != null) {
+            int ButtonBrightness = Settings.System.getInt(getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, 255);
+            mButtonBrightness.setValue(ButtonBrightness / 1);
+            mButtonBrightness.setOnPreferenceChangeListener(this);
+        }
 		
         int keysDisabled = 0;
             mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
@@ -163,8 +189,22 @@ public class ButtonSettings extends ActionFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-		
-        if (preference == mTorchLongPressPowerTimeout) {
+        if (preference == mBacklightTimeout) {
+            String BacklightTimeout = (String) newValue;
+            int BacklightTimeoutValue = Integer.parseInt(BacklightTimeout);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue);
+            int BacklightTimeoutIndex = mBacklightTimeout
+                    .findIndexOfValue(BacklightTimeout);
+            mBacklightTimeout
+                    .setSummary(mBacklightTimeout.getEntries()[BacklightTimeoutIndex]);
+            return true;
+        } else if (preference == mButtonBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, value * 1);
+            return true;
+        } else if (preference == mTorchLongPressPowerTimeout) {
             String TorchTimeout = (String) newValue;
             int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
             Settings.System.putInt(getActivity().getContentResolver(),
