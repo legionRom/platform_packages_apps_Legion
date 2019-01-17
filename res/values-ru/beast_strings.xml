@@ -275,8 +275,49 @@
     <string name="audio_panel_view_voice_title">Голос</string>
     <string name="audio_panel_view_bt_sco_title">Блютуз</string>
 	
-    <!-- Enable keys backlight-->
-    <string name="button_brightness_sw_title">Включить подсветку</string>
+    <!-- OP Gestures  -->
+    <string name="use_bottom_gesture_title">Навигация жестами</string>
+    <string name="use_bottom_gesture_summary">Использовать свайп снизу экрана для навигации</string>
+	
+    <string name="recents_show_membar_title">Состояние памяти</string>
+    <string name="recents_show_membar_summary">Отображать количество свободной памяти</string>
+	
+   <!-- Buttons title -->
+    <string name="volume_category">Кнопки громкости</string>
+
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Управление воспроизведением</string>
+    <string name="volume_rocker_music_controls_summary">Когда экран выключен, длительное нажатие переключает треки</string>
+	
+    <!-- Volume rocker wake -->
+    <string name="volume_rocker_wake_title">Пробуждение громкостью</string>
+    <string name="volume_rocker_wake_summary">Нажатие на кнопки громкости пробудлает устройство</string>
+	
+    <!-- Language options - Volume rocker cursor control -->
+    <string name="cursor_section_header">Курсор</string>
+    <string name="volume_key_cursor_control_title">Управление курсором</string>
+    <string name="volume_key_cursor_control_off">Отключено</string>
+    <string name="volume_key_cursor_control_on">Вверх/вниз двигает курсор влево/вправо</string>
+    <string name="volume_key_cursor_control_on_reverse">Вверх/вниз двигает курсор вправо/влево</string>
+	
+    <string name="oreo_recents_category">Недавние приложения Oreo</string>
+	
+    <!-- Recents panel settings -->
+    <string name="show_clear_all_recents_button_title">Кнопка "Очистить все"</string>
+    <string name="show_clear_all_recents_button_summary">Показывать "Очистить все"</string>
+    <string name="recents_clear_all_location_title">Расположение кнопки</string>
+    <string name="recents_clear_all_location_top_right">Сверху справа</string>
+    <string name="recents_clear_all_location_top_left">Сверху слева</string>
+    <string name="recents_clear_all_location_top_center">Сверху в центре</string>
+    <string name="recents_clear_all_location_bottom_right">Снизу справа</string>
+    <string name="recents_clear_all_location_bottom_left">Снизу слева</string>
+    <string name="recents_clear_all_location_bottom_center">Снизу в центре</string>
+	
+   <!-- Oreo Recents Style -->
+    <string name="recents_type_title">Вид списка недавних приложений</string>
+    <string name="recents_stock">Сток</string>
+	
+    <string name="hardware_keys_disable_title">Отключить кнопки</string>
 	
     <!-- Hardware keys -->
     <string name="hardware_keys_category">Аппаратные кнопки</string>
