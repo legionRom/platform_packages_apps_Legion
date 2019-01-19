@@ -20,6 +20,11 @@
         android:fragment="com.beast.settings.fragments.WakeLockBlocker"
         android:title="@string/wakelock_blocker_title" />
 		
+    <Preference
+        android:id="@+id/alarm_blocker"
+        android:fragment="com.beast.settings.fragments.AlarmBlocker"
+        android:title="@string/alarm_blocker" />
+		
     <PreferenceCategory
         android:title="@string/audio_panel_view">
 
