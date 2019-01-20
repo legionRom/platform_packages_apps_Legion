@@ -279,10 +279,6 @@
     <string name="audio_panel_view_voice_title">Voice</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 	
-    <!-- OP Gestures  -->
-    <string name="use_bottom_gesture_title">Navigation gestures</string>
-    <string name="use_bottom_gesture_summary">Use bottom swipe up gestures for navigation</string>
-	
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
 	
@@ -320,7 +316,6 @@
    <!-- Oreo Recents Style -->
     <string name="recents_type_title">Oreo Recents Layout</string>
     <string name="recents_stock">Stock</string>
-    <string name="recents_grid">Grid</string>
     <string name="recents_go">Android Go</string>
 	
     <string name="hardware_keys_disable_title">Disable keys</string>

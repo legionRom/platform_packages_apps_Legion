@@ -275,10 +275,6 @@
     <string name="audio_panel_view_voice_title">Голос</string>
     <string name="audio_panel_view_bt_sco_title">Блютуз</string>
 	
-    <!-- OP Gestures  -->
-    <string name="use_bottom_gesture_title">Навигация жестами</string>
-    <string name="use_bottom_gesture_summary">Использовать свайп снизу экрана для навигации</string>
-	
     <string name="recents_show_membar_title">Состояние памяти</string>
     <string name="recents_show_membar_summary">Отображать количество свободной памяти</string>
 	
