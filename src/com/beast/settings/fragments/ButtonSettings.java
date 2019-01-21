@@ -48,7 +48,6 @@ public class ButtonSettings extends ActionFragment implements
         Preference.OnPreferenceChangeListener{
 			
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
-    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
@@ -74,7 +73,6 @@ public class ButtonSettings extends ActionFragment implements
     public static final int KEY_MASK_VOLUME = 0x40;
 	
     private ListPreference mTorchLongPressPowerTimeout;
-    private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mHwKeyDisable;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
@@ -112,16 +110,6 @@ public class ButtonSettings extends ActionFragment implements
                     UserHandle.USER_CURRENT);
             mHwKeyDisable.setChecked(keysDisabled != 0);
             mHwKeyDisable.setOnPreferenceChangeListener(this);
-		
-        // volume key cursor control
-        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
-        if (mVolumeKeyCursorControl != null) {
-            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
-            int volumeRockerCursorControl = Settings.System.getInt(getContentResolver(),
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
-            mVolumeKeyCursorControl.setValue(Integer.toString(volumeRockerCursorControl));
-           mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
-        }
 		
          // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
@@ -213,16 +201,6 @@ public class ButtonSettings extends ActionFragment implements
                     .findIndexOfValue(TorchTimeout);
             mTorchLongPressPowerTimeout
                     .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
-            return true;
-        } else if (preference == mVolumeKeyCursorControl) {
-            String volumeKeyCursorControl = (String) newValue;
-            int volumeKeyCursorControlValue = Integer.parseInt(volumeKeyCursorControl);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, volumeKeyCursorControlValue);
-            int volumeKeyCursorControlIndex = mVolumeKeyCursorControl
-                    .findIndexOfValue(volumeKeyCursorControl);
-            mVolumeKeyCursorControl
-                    .setSummary(mVolumeKeyCursorControl.getEntries()[volumeKeyCursorControlIndex]);
             return true;
         } else if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
