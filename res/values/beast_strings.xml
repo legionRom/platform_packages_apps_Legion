@@ -308,11 +308,6 @@
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 	
-   <!-- Oreo Recents Style -->
-    <string name="recents_type_title">Oreo Recents Layout</string>
-    <string name="recents_stock">Stock</string>
-    <string name="recents_go">Android Go</string>
-	
     <string name="hardware_keys_disable_title">Disable keys</string>
 	
     <!-- Hardware keys -->

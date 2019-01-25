@@ -304,10 +304,6 @@
     <string name="recents_clear_all_location_bottom_left">Снизу слева</string>
     <string name="recents_clear_all_location_bottom_center">Снизу в центре</string>
 	
-   <!-- Oreo Recents Style -->
-    <string name="recents_type_title">Вид списка недавних приложений</string>
-    <string name="recents_stock">Сток</string>
-	
     <string name="hardware_keys_disable_title">Отключить кнопки</string>
 	
     <!-- Hardware keys -->
