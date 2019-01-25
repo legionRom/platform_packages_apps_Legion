@@ -345,6 +345,9 @@
 	
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Редактирование иконок</string>
+	
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Ярлыки на экране блокировки</string>
     
 </resources>
 
