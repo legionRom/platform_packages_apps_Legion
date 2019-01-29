@@ -46,13 +46,6 @@
     <string name="lockscreen_battery_info_title">Информация о зарядке на экране блокировки</string>
     <string name="lockscreen_battery_info_summary">Показывать при зарядке на экране блокировки максимальную силу тока,напряжение и температуру батареи</string>
 
-    <!-- QS rows and columns -->
-    <string name="qs_rows_columns_title">Настройки панели быстрых настроек</string>
-    <string name="qs_rows_portrait_title">Ряды плиток в портретном режиме</string>
-    <string name="qs_rows_landscape_title">Ряды плиток в ландшафтном режиме</string>
-    <string name="qs_columns_portrait_title">Столбцы плиток в портретном режиме</string>
-    <string name="qs_columns_landscape_title">Столбцы плиток в ландшафтном режиме</string>	
-
     <!-- Statusbar Clock -->
     <string name="clock_style_category_title">Настройки часов</string>
     <string name="clock_style_category_summary">Настройка часов в строке состояния</string>
