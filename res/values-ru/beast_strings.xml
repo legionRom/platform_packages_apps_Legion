@@ -343,6 +343,16 @@
     <string name="qs_show_brightness_summary">Показать регулятор яркости в панели быстрых настроек</string>
     <string name="qs_brightness_position_bottom_title">Регулятор яркости внизу</string>
     <string name="qs_brightness_position_bottom_summary">Показать регулятор яркости внизу панели быстрых настроек</string>
+	
+    <!-- OP Gestures -->
+    <string name="gesture_settings_title">Omni OP Жесты</string>
+    <string name="gesture_settings_info_new">Панель навигации должна быть отключена! Доступны жесты: \"Назад\" - свайп вверх слева или справа. \"Домой\" - свайп вверх от середины. \"Недавние приложения\" - свайп вверх от центра и удержание. \"Последнее приложение\" - короткий свайп вверх и удержание в центре</string>
+    <string name="use_bottom_gesture_title">Жесты навигации</string>
+    <string name="use_bottom_gesture_summary">Свайп вверх для навигации</string>
+    <string name="gesture_swipe_length_title">Swipe trigger height</string>
+    <string name="gesture_swipe_length_summary">Heigth from bottom to trigger swipe</string>
+    <string name="gesture_action_timeout_title">Swipe trigger timeout</string>
+    <string name="gesture_action_timeout_summary">Timeout before the gesture action is started</string>
     
 </resources>
 

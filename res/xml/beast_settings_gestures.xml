@@ -21,6 +21,11 @@
         android:title="@string/edge_gestures_title" 
         android:summary="@string/edge_gestures_summary" 
         android:fragment="com.beast.settings.fragments.EdgeGesturesSettings"/>
+		
+    <Preference
+        android:key="omni_gesture_settings"
+        android:title="@string/gesture_settings_title"
+        android:fragment="com.beast.settings.fragments.OmniGestureSettings" />
 			 
     <PreferenceCategory
          android:key="dtts_category"
