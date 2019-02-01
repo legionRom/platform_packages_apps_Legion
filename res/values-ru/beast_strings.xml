@@ -361,6 +361,10 @@
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Индикатор VoLTE</string>
     <string name="volte_icon_summary">Отображать индикатор VoLTE</string>
+	
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">Индикатор 4G</string>
+    <string name="show_fourg_icon_summary">Отображать индикатор 4G вместо LTE</string>
     
 </resources>
 
