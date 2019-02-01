@@ -70,5 +70,11 @@
             android:persistent="false"
             android:dependency="sysui_rounded_fwvals" />
     </PreferenceCategory>
+	
+    <com.beast.settings.preferences.SystemSettingSwitchPreference    
+          android:key="roaming_indicator_icon"
+          android:title="@string/roaming_indicator_icon_title"
+          android:summary="@string/roaming_indicator_icon_summary"
+          android:defaultValue="true"/>
 
  </PreferenceScreen>
