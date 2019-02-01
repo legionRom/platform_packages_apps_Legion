@@ -357,6 +357,10 @@
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор роуминга</string>
     <string name="roaming_indicator_icon_summary">Отображение индикатора роуминга в режиме роуминга</string>
+	
+    <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_title">Индикатор VoLTE</string>
+    <string name="volte_icon_summary">Отображать индикатор VoLTE</string>
     
 </resources>
 
