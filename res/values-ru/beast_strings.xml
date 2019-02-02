@@ -346,13 +346,13 @@
 	
     <!-- OP Gestures -->
     <string name="gesture_settings_title">Omni OP Жесты</string>
-    <string name="gesture_settings_info_new">Панель навигации должна быть отключена! Доступны жесты: \"Назад\" - свайп вверх слева или справа. \"Домой\" - свайп вверх от середины. \"Недавние приложения\" - свайп вверх от центра и удержание. \"Последнее приложение\" - короткий свайп вверх и удержание в центре</string>
-    <string name="use_bottom_gesture_title">Жесты навигации</string>
+    <string name="gesture_settings_info_new">Панель навигации должна быть отключена!\n\nДоступные жесты:\n\nНазад\n- Свайп вверх слева или справа\n\nДомой\n- Свайп вверх по центру экрана\n\nНедавние приложения\n- Свайп вверх по центру экрана и удержание\n\nПоследнее приложение\n- Короткий свайп вверх и удержание.</string>
+    <string name="use_bottom_gesture_title">Использовать жесты</string>
     <string name="use_bottom_gesture_summary">Свайп вверх для навигации</string>
-    <string name="gesture_swipe_length_title">Swipe trigger height</string>
-    <string name="gesture_swipe_length_summary">Heigth from bottom to trigger swipe</string>
-    <string name="gesture_action_timeout_title">Swipe trigger timeout</string>
-    <string name="gesture_action_timeout_summary">Timeout before the gesture action is started</string>
+    <string name="gesture_swipe_length_title">Высота срабатывания свайпа</string>
+    <string name="gesture_swipe_length_summary">Необходимая высота снизу для срабатывания свайпа</string>
+    <string name="gesture_action_timeout_title">Время срабатывания свайпа</string>
+    <string name="gesture_action_timeout_summary">Необхожимое время для срабатывания свайпа</string>
 	
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор роуминга</string>
