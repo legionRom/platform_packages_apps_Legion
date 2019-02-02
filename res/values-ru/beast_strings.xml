@@ -365,6 +365,10 @@
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">Индикатор 4G</string>
     <string name="show_fourg_icon_summary">Отображать индикатор 4G вместо LTE</string>
+	
+    <!-- Lockscreen visualizer -->
+    <string name="lockscreen_visualizer_title">Визуализатор музыки</string>
+    <string name="lockscreen_visualizer_summary">Показывать визуализацию музыки на экране блокировки во время воспроизведения</string>
     
 </resources>
 
