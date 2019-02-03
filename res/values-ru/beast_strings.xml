@@ -254,10 +254,7 @@
     <string name="torch_long_press_power_timeout_10min">10 минут</string>
 	
     <!-- Weather -->
-    <string name="weather_title">Погода</string>
-    <string name="show_weather_on_ls_title">Показывать погоду на экране блокировки</string>
-    <string name="show_weather_on_ls_summary">Добавляет информацию о погоде рядом с датой на вашем экране блокировки</string>
-    <string name="weather_unit">Градусы</string>
+    <string name="weather_unit">Единицы измерения температуры</string>
     <string name="weather_unit_metric" translatable="false">Цельсия</string>
     <string name="weather_unit_imperial" translatable="false">Фаренгейта</string>
 	
@@ -369,6 +366,7 @@
     <!-- Lockscreen visualizer -->
     <string name="lockscreen_visualizer_title">Визуализатор музыки</string>
     <string name="lockscreen_visualizer_summary">Показывать визуализацию музыки на экране блокировки во время воспроизведения</string>
+
     
 </resources>
 
