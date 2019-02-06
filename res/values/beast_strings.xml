@@ -376,6 +376,16 @@
     <!-- Lockscreen visualizer -->
     <string name="lockscreen_visualizer_title">Music visualizer</string>
     <string name="lockscreen_visualizer_summary">Display music visualizer when available</string>
+	
+    <!-- Statusbar ticker -->
+    <string name="statusbar_notifi_cat">Notifications Ticker</string>
+    <string name="status_bar_ticker_title">Ticker</string>
+    <string name="status_bar_show_ticker_title">Ticker</string>
+    <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
+    <string name="ticker_animation_mode_title">Ticker animation</string>
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
+    <string name="ticker_animation_mode_scroll">Scroll</string>
+    <string name="ticker_tick_duration_title">Ticker duration</string>
     
 </resources>
 

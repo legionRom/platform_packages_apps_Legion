@@ -60,7 +60,7 @@
     <string name="status_bar_am_pm_normal">Обычный</string>
     <string name="status_bar_am_pm_small">Маленький</string>
     <string name="status_bar_am_pm_hidden">Скрытый(по умолчанию)</string>
-    <string name="clock_секунды_display">Показывать секунды</string>
+    <string name="clock_seconds_display">Показывать секунды</string>
     <string name="clock_date_display">Дата</string>
     <string name="clock_date_display_summary">Отображение даты перед часами</string>
     <string name="clock_date_display_none">Не показывать</string>
@@ -366,7 +366,16 @@
     <!-- Lockscreen visualizer -->
     <string name="lockscreen_visualizer_title">Визуализатор музыки</string>
     <string name="lockscreen_visualizer_summary">Показывать визуализацию музыки на экране блокировки во время воспроизведения</string>
-
+	
+    <!-- Statusbar ticker -->
+    <string name="statusbar_notifi_cat">Бегущая строка уведомлений</string>
+    <string name="status_bar_ticker_title">Бегущая строка</string>
+    <string name="status_bar_show_ticker_title">Бегущая строка</string>
+    <string name="status_bar_show_ticker_summary">Предварительный просмотр уведомлений в строке состояния</string>
+    <string name="ticker_animation_mode_title">Анимация бегущей строки</string>
+    <string name="ticker_animation_mode_alpha_fade">Затухание</string>
+    <string name="ticker_animation_mode_scroll">Прокрутка</string>
+    <string name="ticker_tick_duration_title">Продолжительность бегущей строки</string>
     
 </resources>
 
