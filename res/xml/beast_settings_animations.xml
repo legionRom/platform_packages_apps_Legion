@@ -40,5 +40,11 @@
             android:entries="@array/listview_interpolator_entries"
             android:entryValues="@array/listview_interpolator_values"
             android:defaultValue="0" />
+			
+         <PreferenceScreen
+            android:key="system_animation"
+            android:title="@string/system_animation_title"
+            android:summary="@string/system_animation_summary"
+            android:fragment="com.beast.settings.fragments.ui.AnimationControls" />
 
 </PreferenceScreen>
