@@ -377,6 +377,72 @@
     <string name="ticker_animation_mode_alpha_fade">Затухание</string>
     <string name="ticker_animation_mode_scroll">Прокрутка</string>
     <string name="ticker_tick_duration_title">Продолжительность бегущей строки</string>
+	
+    <!-- Toast Animation -->
+    <string name="toast_animation_title">Анимация всплывающих уведомлений</string>
+    <string name="toast_none_animation">Ничего</string>
+    <string name="toast_default_animation">По умолчанию</string>
+    <string name="toast_fade_animation">Затухание</string>
+    <string name="toast_SlideRight_animation">Сдвиг вправо</string>
+    <string name="toast_SlideLeft_animation">Сдвиг влево</string>
+    <string name="toast_Xylon_animation">Анимация Xylon</string>
+    <string name="toast_Toko_animation">Анимация Toko</string>
+    <string name="toast_Tn_animation">Анимация Tn</string>
+    <string name="toast_Honami_animation">Анимация Honami</string>
+    <string name="toast_FastFade_animation">Быстрое затухание</string>
+    <string name="toast_GrowFade_animation">Постепенное затухание</string>
+    <string name="toast_GrowFadeCenter_animation">Постепенное затухание от центра</string>
+    <string name="toast_GrowFadeBottom_animation">Постепенное затухание вниз</string>
+    <string name="toast_Translucent_animation">Полупрозрачная</string>
+    <string name="toast_SlideLeftRight_animation">Слайд слева направо</string>
+    <string name="toast_SlideRightLeft_animation">Слайд справа налево</string>
+    <string name="toast_animation_test">Тест анимации всплывающих уведомлений</string>
+    <string name="toast">Тост-уведомление</string>
+	
+        <!-- ListView animation -->
+    <string name="listview_animation_title">Анимация списков</string>
+    <string name="listview_off">По умолчанию</string>
+    <string name="listview_wave_left">Волна (слева)</string>
+    <string name="listview_wave_right">Волна (справа)</string>
+    <string name="listview_alpha">Прозрачность</string>
+    <string name="listview_scale">Масштаб</string>
+    <string name="listview_stack_top">Стек (сверху)</string>
+    <string name="listview_stack_bottom">Стек (снизу)</string>
+    <string name="listview_unfold">Развернуть</string>
+    <string name="listview_fold">Сворачивание</string>
+    <string name="listview_translate_left">Переход (слева)</string>
+    <string name="listview_translate_right">Переход (справа)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Эффекты анимации списков</string>
+    <string name="listview_accelerate_interpolator">Ускорение</string>
+    <string name="listview_decelerate_interpolator">Замедление</string>
+    <string name="listview_accelerate_decelerate_interpolator">Ускорение и замедление</string>
+    <string name="listview_anticipate_interpolator">Опережение</string>
+    <string name="listview_overshoot_interpolator">Вылет</string>
+    <string name="listview_anticipate_overshoot_interpolator">Опережение и перекрытие</string>
+    <string name="listview_bounce_interpolator">Отскок</string>
+	
+    <!-- AOKP custom system animations -->
+    <string name="system_animation_title">Система</string>
+    <string name="system_animation_summary">Настроить анимации для каждого окна в системе</string>
+    <string name="activity_open_title">Анимация открытия</string>
+    <string name="activity_close_title">Анимация закрытия задачи</string>
+    <string name="task_open_title">Анимация открытия задачи</string>
+    <string name="task_open_behind_title">Анимация открытия фоновой задачи</string>
+    <string name="task_close_title">Анимация закрытия задачи</string>
+    <string name="task_move_to_front_title">Анимация перемещения на передний план</string>
+    <string name="task_move_to_back_title">Анимация движения назад</string>
+    <string name="wallpaper_open_title">Анимация открытия обоев</string>
+    <string name="wallpaper_close_title">Анимация закрытия обоев</string>
+    <string name="wallpaper_intra_open_title">Внутр. анимация открытия обоев</string>
+    <string name="wallpaper_intra_close_title">Внутр. анимация закрытия обоев</string>
+    <string name="animation_duration_title">Длительность анимации</string>
+    <string name="title_animation_no_override">Предотвращение переопределения приложением</string>
+    <string name="summary_animation_no_override">Предотвратить переопределение переходов приложением</string>
+    <string name="animation_duration_default">По умолчанию</string>
+    <string name="disable_transition_animations_title">Отключить анимацию переходов</string>
+    <string name="disable_transition_animations_summary">Принудительное отключение анимации переходов</string>
     
 </resources>
 
