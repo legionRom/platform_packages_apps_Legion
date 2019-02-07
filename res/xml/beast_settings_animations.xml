@@ -46,5 +46,13 @@
             android:title="@string/system_animation_title"
             android:summary="@string/system_animation_summary"
             android:fragment="com.beast.settings.fragments.ui.AnimationControls" />
+			
+       <ListPreference
+        android:key="pref_scrollingcache"
+        android:dialogTitle="@string/pref_scrollingcache_title"
+        android:title="@string/pref_scrollingcache_title"
+        android:summary="@string/pref_scrollingcache_summary"
+        android:entries="@array/entries_scrollingcache"
+        android:entryValues="@array/values_scrollingcache" />
 
 </PreferenceScreen>

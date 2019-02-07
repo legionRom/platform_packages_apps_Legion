@@ -40,6 +40,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.beast.settings.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Animations extends SettingsPreferenceFragment  implements Preference.OnPreferenceChangeListener {
@@ -48,12 +50,18 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
 	
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    private ListPreference mScrollingCachePref;
 
     protected Context mContext;
+    protected ContentResolver resolver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +69,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
 
         addPreferencesFromResource(R.xml.beast_settings_animations);
 		
+        resolver = getActivity().getContentResolver();
         mContext = getActivity().getApplicationContext();
 		
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
@@ -84,6 +93,11 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
         mListViewInterpolator.setEnabled(listviewanimation > 0);
+		
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
     }
 	
     @Override
@@ -109,6 +123,11 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            if (objValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) objValue);
+            }
             return true;
         }
         return false; 
