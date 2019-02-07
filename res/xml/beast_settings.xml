@@ -67,6 +67,12 @@
             android:title="@string/notifications_title"
             android:fragment="com.beast.settings.fragments.NotificationSettings"
             android:icon="@drawable/ic_settings_notifications"/>
+        <!-- Animations -->
+        <Preference
+            android:key="animations_category"
+            android:title="@string/animations_title"
+            android:fragment="com.havoc.settings.fragments.Animations"
+            android:icon="@drawable/ic_settings_animations"/>
          <!-- Misc -->
         <PreferenceScreen
             android:key="misc_category"

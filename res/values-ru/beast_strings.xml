@@ -13,6 +13,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Categories -->
+    <string name="animations_title">Анимации</string>
     <string name="button_title">Кнопки</string>
     <string name="gestures_title">Жесты</string>
     <string name="lockscreen_title">Экран блокировки</string>
