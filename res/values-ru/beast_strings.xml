@@ -480,6 +480,10 @@
 	
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Стиль шрифта даты</string>
+	
+    <!-- Lock Clock & Date Size -->
+    <string name="lockdate_font_size_title">Размер шрифта даты</string>
+    <string name="lockclock_font_size_title">Размер шрифта часов</string>
 
 </resources>
 
