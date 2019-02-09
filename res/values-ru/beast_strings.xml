@@ -476,7 +476,10 @@
     <string name="lock_widget_font_black_italic">Черный курсив</string>
 
     <!-- Lock Clock Fonts -->
-    <string name="lock_clock_font_title">Стиль шрифта часов</string> 
-    
+    <string name="lock_clock_font_title">Стиль шрифта часов</string>
+	
+    <!-- Lock Date Fonts -->
+    <string name="lock_date_font_title">Стиль шрифта даты</string>
+
 </resources>
 
