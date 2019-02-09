@@ -22,6 +22,20 @@
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
     </Preference>
 	
+    <PreferenceCategory
+        android:key="ls_widget"
+        android:title="@string/ls_widget">
+
+        <ListPreference
+            android:key="lock_clock_fonts"
+            android:title="@string/lock_clock_font_title"
+            android:entries="@array/lock_widget_fonts_entries"
+            android:entryValues="@array/lock_widget_fonts_values"
+            android:defaultValue="0"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+	
     <com.beast.settings.preferences.SecureSettingListPreference
             android:key="weather_lockscreen_unit"
             android:dialogTitle="@string/weather_unit"

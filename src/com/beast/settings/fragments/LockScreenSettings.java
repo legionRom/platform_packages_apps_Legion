@@ -46,12 +46,14 @@ import com.beast.settings.preferences.Utils;
     private static final String KEY_FACE_UNLOCK_PACKAGE = "com.android.facelock";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String WEATHER_UNIT = "weather_lockscreen_unit";
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
 
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFaceUnlock;
 	
     ListPreference mWeatherUnit;
+    ListPreference mLockClockFonts;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -84,6 +86,13 @@ import com.beast.settings.preferences.Utils;
                 getContentResolver(), Settings.System.WEATHER_LOCKSCREEN_UNIT, 0)));
         mWeatherUnit.setSummary(mWeatherUnit.getEntry());
         mWeatherUnit.setOnPreferenceChangeListener(this);
+
+        // Lockscren Clock Fonts
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 0)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -105,6 +114,12 @@ import com.beast.settings.preferences.Utils;
             mWeatherUnit.setValue(String.valueOf(newValue));
             mWeatherUnit.setSummary(mWeatherUnit.getEntry());
             return true;
+        } else if (preference == mLockClockFonts) {
+            		Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
+                    	Integer.valueOf((String) newValue));
+            		mLockClockFonts.setValue(String.valueOf(newValue));
+            		mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+	        return true; 
         }
         return false;
     }

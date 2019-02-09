@@ -451,6 +451,32 @@
     <string name="pref_scrollingcache_default_enable">Включить по умолчанию</string>
     <string name="pref_scrollingcache_default_disable">Отключить по умолчанию</string>
     <string name="pref_scrollingcache_force_disable">Отключить принудительно</string>
+	
+    <!-- Lock Widget -->
+    <string name="ls_widget">Стиль виджета</string>
+
+    <!-- Lock Widget Fonts -->
+    <string name="lock_widget_font_stock">Нормальный (по умолчанию)</string>
+    <string name="lock_widget_font_bold">Жирный</string>
+    <string name="lock_widget_font_italic">Курсив</string>
+    <string name="lock_widget_font_bold_italic">Жирный курсив</string>
+    <string name="lock_widget_font_light_italic">Легкий курсив</string>
+    <string name="lock_widget_font_thin_italic">Тонкий курсив</string>
+    <string name="lock_widget_font_light">Легкий</string>
+    <string name="lock_widget_font_thin">Тонкий</string>
+    <string name="lock_widget_font_condensed_normal">Сжатый</string>
+    <string name="lock_widget_font_condensed_italic">Сжатый курсив</string>
+    <string name="lock_widget_font_condensed_bold">Сжатый жирный</string>
+    <string name="lock_widget_font_condensed_bold_italic">Сжатый жирный курсив</string>
+    <string name="lock_widget_font_condensed_light">Сжатый легкий</string>
+    <string name="lock_widget_font_condensed_light_italic">Сжатый легкий курсив</string> 
+    <string name="lock_widget_font_medium_normal">Средний</string>
+    <string name="lock_widget_font_medium_italic">Средний курсив</string>
+    <string name="lock_widget_font_black">Черный</string>
+    <string name="lock_widget_font_black_italic">Черный курсив</string>
+
+    <!-- Lock Clock Fonts -->
+    <string name="lock_clock_font_title">Стиль шрифта часов</string> 
     
 </resources>
 
