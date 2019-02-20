@@ -496,6 +496,13 @@
     <string name="lockclock_font_size_title">Clock font size</string>
 	
     <string name="global_actions_onthego">OnTheGo</string>
+	
+    <!-- Lockscreen items -->
+    <string name="lockscreen_hide_items_category">Hide items</string>
+    <string name="lockscreen_clock_title">Clock widget</string>
+    <string name="lockscreen_clock_summary">Show the clock widget on the lockscreen</string>
+    <string name="lockscreen_info_title">Items underneath the clock</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
     
 </resources>
 

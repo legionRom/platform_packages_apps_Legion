@@ -98,5 +98,23 @@
             android:persistent="false" />
 
     </PreferenceCategory>
+	
+    <PreferenceCategory
+        android:title="@string/lockscreen_hide_items_category"
+        android:key="lockscreen_hide_cat">
+
+    <com.beast.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.beast.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_info"
+        android:title="@string/lockscreen_info_title"
+        android:summary="@string/lockscreen_info_summary"
+        android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
