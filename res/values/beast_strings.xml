@@ -513,6 +513,14 @@
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
     <string name="lockscreen_clock_selection_sammy_accent">Sammy with accent</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy with accent (alt)</string>
+	
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+    <string name="system_animations">System Animations</string>
+    <string name="listview">ListView</string>
     
 </resources>
 

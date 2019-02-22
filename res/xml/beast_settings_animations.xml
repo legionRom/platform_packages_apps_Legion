@@ -47,6 +47,12 @@
             android:summary="@string/system_animation_summary"
             android:fragment="com.beast.settings.fragments.ui.AnimationControls" />
 			
+        <ListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values" /> 
+			
        <ListPreference
         android:key="pref_scrollingcache"
         android:dialogTitle="@string/pref_scrollingcache_title"
