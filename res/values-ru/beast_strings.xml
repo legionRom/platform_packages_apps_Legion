@@ -488,6 +488,29 @@
     <!-- Lock Clock & Date Size -->
     <string name="lockdate_font_size_title">Размер шрифта даты</string>
     <string name="lockclock_font_size_title">Размер шрифта часов</string>
+	
+    <!-- Lockscreen items -->
+    <string name="lockscreen_hide_items_category">Скрытие элементов</string>
+    <string name="lockscreen_clock_title">Виджет часов</string>
+    <string name="lockscreen_clock_summary">Отображать часы на экране блокировки</string>
+    <string name="lockscreen_info_title">Элементы под часами</string>
+    <string name="lockscreen_info_summary">Отображать дату, погоду, будильники на экране блокировки</string>
+	
+    <!-- Lockscreen clock styles -->
+    <string name="lockscreen_clock_selection_title">Стиль часов</string>
+    <string name="lockscreen_clock_selection_digital">По умолчанию</string>
+    <string name="lockscreen_clock_selection_digital_bold">Цифровые (жирные)</string>
+    <string name="lockscreen_clock_selection_analog">Аналоговые</string>
+    <string name="lockscreen_clock_selection_sammy">Сэмми</string>
+    <string name="lockscreen_clock_selection_sammy_bold">Сэмми (жирные)</string>
+    <string name="lockscreen_clock_selection_sammy_accent">Сэмми с акцентом</string>
+    <string name="lockscreen_clock_selection_sammy_accent_alt">Сэмми с акцентом (альт.)</string>
+	
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Анимация выключения экрана</string>
+    <string name="screen_off_animation_default">По умолчанию</string>
+    <string name="screen_off_animation_crt">ЭЛТ</string>
+    <string name="screen_off_animation_scale">Масштаб</string>
 
 </resources>
 
