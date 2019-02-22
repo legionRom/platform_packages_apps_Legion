@@ -20,13 +20,13 @@
         android:key="omni_gesture_settings"
         android:title="@string/gesture_settings_title" >
 
-        <com.beast.settings.preferences.SystemSettingSwitchPreference
+        <com.legion.settings.preferences.SystemSettingSwitchPreference
             android:key="use_bottom_gesture_navigation"
             android:title="@string/use_bottom_gesture_title"
             android:summary="@string/use_bottom_gesture_summary"
             android:defaultValue="false" />
 			
-        <com.beast.settings.preferences.CustomSeekBarPreference
+        <com.legion.settings.preferences.CustomSeekBarPreference
             android:key="gesture_swipe_length"
             android:title="@string/gesture_swipe_length_title"
             android:summary="@string/gesture_swipe_length_summary"
@@ -34,7 +34,7 @@
             settings:units="px"
             android:dependency="use_bottom_gesture_navigation" />
 
-        <com.beast.settings.preferences.CustomSeekBarPreference
+        <com.legion.settings.preferences.CustomSeekBarPreference
             android:key="gesture_swipe_timeout"
             android:title="@string/gesture_action_timeout_title"
             android:summary="@string/gesture_action_timeout_summary"
