@@ -33,10 +33,10 @@
             android:icon="@drawable/ic_settings_buttons"/>
          <!-- Navigation Bar -->
         <PreferenceScreen
-            android:key="navigationbar_settings"
+            android:key="navigationbar_category"
             android:title="@string/navbar_title" 
-            android:icon="@drawable/ic_settings_navbar"
-            android:fragment="com.android.settings.smartnav.NavigationBarSettings" />
+            android:fragment="com.beast.settings.fragments.NavbarSettings"
+            android:icon="@drawable/ic_settings_navbar"/>
          <!-- Gestures -->
         <PreferenceScreen
             android:key="gestures_category"
