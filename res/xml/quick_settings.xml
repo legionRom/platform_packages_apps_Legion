@@ -66,4 +66,10 @@
 	android:defaultValue="100"
         android:persistent="false" />
 
+    <Preference
+	android:key="category_custom_header" 
+         android:title="@string/statusbar_header_category_title" 
+         android:summary="@string/statusbar_header_category_summary" 
+         android:fragment="com.legion.settings.StatusbarHeader" />
+
 </PreferenceScreen>
