@@ -272,8 +272,8 @@
     <string name="audio_panel_view_voice_title">Voice</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 	
-    <string name="recents_show_membar_title">Memory bar</string>
-    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+    <!--<string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string -->
 	
    <!-- Buttons title -->
     <string name="volume_category">Volume Rocker</string>
@@ -374,9 +374,9 @@
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
 	
-    <!-- Lockscreen visualizer -->
+    <!-- Lockscreen visualizer
     <string name="lockscreen_visualizer_title">Music visualizer</string>
-    <string name="lockscreen_visualizer_summary">Display music visualizer when available</string>
+    <string name="lockscreen_visualizer_summary">Display music visualizer when available</string> -->
 	
     <!-- Statusbar ticker -->
     <string name="statusbar_notifi_cat">Notifications Ticker</string>
