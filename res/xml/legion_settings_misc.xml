@@ -16,6 +16,12 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 		
     <Preference
+        android:key="aggressive_battery"
+        android:title="@string/aggressive_battery_title"
+        android:icon="@drawable/ic_aggressive_battery"
+        android:fragment="com.beast.settings.fragments.AggressiveBattery" />
+		
+    <Preference
         android:key="wakelock_blocker"
         android:fragment="com.legion.settings.fragments.WakeLockBlocker"
         android:title="@string/wakelock_blocker_title" />
@@ -29,6 +35,6 @@
         android:key="screenstate_category" 
         android:title="@string/screen_state_toggles_title"  
         android:summary="@string/screen_state_toggles_summary"  
-        android:fragment="com.legion.settings.fragments.ScreenStateToggles" /> 
+        android:fragment="com.legion.settings.fragments.ScreenStateToggles" />
 		
  </PreferenceScreen>
