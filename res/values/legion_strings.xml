@@ -216,6 +216,8 @@
     <string name="lock_clock_font_burnstown">Burnstown</string>
     <string name="lock_clock_font_dumbledor">Dumbledor</string>
     <string name="lock_clock_font_phantombold">PhantomBold</string>
+    <string name="custom_text_clock_font_title">Typo Clock font options</string>
+    <string name="custom_text_clock_font_size_title">Typography Clock size</string>
 
     <!-- 4G icon -->
     <string name="show_lte_fourgee_title">4G icon</string>
