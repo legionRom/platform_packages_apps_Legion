@@ -79,6 +79,7 @@
             android:entries="@array/lock_widget_fonts_entries"
             android:entryValues="@array/lock_widget_fonts_values"
             android:defaultValue="0"
+	    android:dependency="lockscreen_clock"
             android:persistent="false" />
 			
         <com.legion.settings.preferences.CustomSeekBarPreference
