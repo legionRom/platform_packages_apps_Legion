@@ -513,6 +513,7 @@
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
     <string name="lockscreen_clock_selection_sammy_accent">Sammy with accent</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy with accent (alt)</string>
+    <string name="lockscreen_clock_selection_text">Android Q Text Clock</string>
 	
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
