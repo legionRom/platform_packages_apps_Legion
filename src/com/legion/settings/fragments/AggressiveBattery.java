@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 BeastROMs
+ * Copyright © 2019 LegionROMs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.beast.settings.fragments;
+package com.legion.settings.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -42,6 +42,6 @@ public class AggressiveBattery extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.BEAST;
+        return MetricsProto.MetricsEvent.LEGION;
     }
 }
