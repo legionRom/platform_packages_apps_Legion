@@ -496,6 +496,7 @@
     <string name="lockclock_font_size_title">Clock font size</string>
 	
     <string name="global_actions_onthego">OnTheGo</string>
+    <string name="text_clock_font_size_title">Text Clock Size</string>
 	
     <!-- Lockscreen items -->
     <string name="lockscreen_hide_items_category">Hide items</string>

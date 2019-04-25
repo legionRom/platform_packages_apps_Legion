@@ -109,6 +109,15 @@
         android:summary="@string/lockscreen_clock_summary"
         android:defaultValue="true" />
 
+    <com.legion.settings.preferences.CustomSeekBarPreference
+	android:key="text_clock_font_size"
+	android:title="@string/text_clock_font_size_title"
+	android:max="40"
+	settings:min="25"
+	settings:units="dp"
+	android:persistent="false"
+	android:defaultValue="32" />
+
     <com.legion.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_info"
         android:title="@string/lockscreen_info_title"
