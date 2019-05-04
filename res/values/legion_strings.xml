@@ -819,4 +819,8 @@
     <string name="ls_shortcut_icon_color">Lockscreen Shortcuts</string>
     <string name="lockscreen_indication_text_color">Lockscreen Indication text</string>
     <string name="yes">YES</string>
+
+    <!-- Q To X Clock -->
+    <string name="center_text_clock_title">Center Text Clock</string>
+    <string name="center_text_clock_summary">Tranform Q-Clock to X-Clock</string>
 </resources>
