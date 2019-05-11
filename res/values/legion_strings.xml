@@ -549,6 +549,12 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver </string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
-
+	
+    <!-- Lockscreen text clock align -->
+    <string name="lockscreen_clock_align_title">Q Text Clock Alignment</string>
+    <string name="lockscreen_clock_align0">Left</string>
+    <string name="lockscreen_clock_align1">Center</string>
+    <string name="lockscreen_clock_align2">Right</string>
+	
 </resources>
 
