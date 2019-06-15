@@ -55,6 +55,7 @@ import com.android.internal.logging.nano.MetricsProto;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFaceUnlock;
+
 	
     ListPreference mWeatherUnit;
     ListPreference mLockClockFonts;
