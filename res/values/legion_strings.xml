@@ -496,7 +496,6 @@
     <string name="lockclock_font_size_title">Clock font size</string>
 	
     <string name="global_actions_onthego">OnTheGo</string>
-    <string name="text_clock_font_size_title">Text Clock Size</string>
 	
     <!-- Lockscreen items -->
     <string name="lockscreen_hide_items_category">Hide items</string>
@@ -552,6 +551,13 @@
 	
     <string name="lock_screen_weather_title">Show Weather</string>
     <string name="lock_screen_weather_summary">Display the current weather info on lockscreen</string>
-	
+
+    <!-- Lockscreen cover art filter -->
+    <string name="lockscreen_cover_filter_title">Lockscreen album art filter</string>
+    <string name="lockscreen_cover_filter_none">None</string>
+    <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_cover_filter_tint">Accent tinted</string>
+    <string name="lockscreen_cover_filter_blur">Blur</string>	
+    <string name="lockscreen_cover_filter_grayblur">Grayscale and blurred</string>
 </resources>
 
