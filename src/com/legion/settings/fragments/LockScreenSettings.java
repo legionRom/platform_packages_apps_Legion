@@ -55,14 +55,12 @@ import com.android.internal.logging.nano.MetricsProto;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFaceUnlock;
-    private static final String TEXT_CLOCK_FONT_SIZE  = "text_clock_font_size";
 	
     ListPreference mWeatherUnit;
     ListPreference mLockClockFonts;
 	ListPreference mLockDateFonts;
 	private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
-    private CustomSeekBarPreference mTextClockFontSize;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -116,12 +114,6 @@ import com.android.internal.logging.nano.MetricsProto;
                 Settings.System.LOCKCLOCK_FONT_SIZE, 64));
         mClockFontSize.setOnPreferenceChangeListener(this);
 
-	// Text Clock Size
-	mTextClockFontSize = (CustomSeekBarPreference) findPreference(TEXT_CLOCK_FONT_SIZE);
-	mTextClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
-		Settings.System.TEXT_CLOCK_FONT_SIZE, 32));
-	mTextClockFontSize.setOnPreferenceChangeListener(this);
-
         // Lock Date Size
         mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
@@ -164,11 +156,6 @@ import com.android.internal.logging.nano.MetricsProto;
 			int top = (Integer) newValue;
 			Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
-			return true;
-	       } else if (preference == mTextClockFontSize) {
-			int top = (Integer) newValue;
-			Settings.System.putInt(getContentResolver(),
-				Settings.System.TEXT_CLOCK_FONT_SIZE, top*1);
 			return true;
         }      else if (preference == mDateFontSize) {
 			int top = (Integer) newValue;
