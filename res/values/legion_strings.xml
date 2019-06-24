@@ -552,6 +552,10 @@
     <string name="lock_screen_weather_title">Show Weather</string>
     <string name="lock_screen_weather_summary">Display the current weather info on lockscreen</string>
 
+    <!-- Lockscreen cover art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
     <!-- Lockscreen cover art filter -->
     <string name="lockscreen_cover_filter_title">Lockscreen album art filter</string>
     <string name="lockscreen_cover_filter_none">None</string>
