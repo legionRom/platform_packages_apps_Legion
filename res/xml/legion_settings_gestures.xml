@@ -18,12 +18,14 @@
          <!-- Edge gestures -->
     <Preference 
         android:key="edge_gestures" 
+        android:icon="@drawable/ic_edge"
         android:title="@string/edge_gestures_title" 
         android:summary="@string/edge_gestures_summary" 
         android:fragment="com.legion.settings.fragments.EdgeGesturesSettings"/>
 		
     <Preference
         android:key="omni_gesture_settings"
+        android:icon="@drawable/ic_op"
         android:title="@string/gesture_settings_title"
         android:fragment="com.legion.settings.fragments.OmniGestureSettings" />
 			 
@@ -33,12 +35,14 @@
 
         <com.legion.settings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_lockscreen"
+	    android:icon="@drawable/ic_doubletap_ls"
             android:title="@string/double_tap_to_sleep_lockscreen_title"
             android:summary="@string/double_tap_to_sleep_lockscreen_summary"
             android:defaultValue="false" />
 			
         <com.legion.settings.preferences.SystemSettingSwitchPreference
 			android:key="double_tap_sleep_gesture"
+			android:icon="@drawable/ic_doubletap"
 			android:title="@string/double_tap_to_sleep_title"
 			android:summary="@string/double_tap_to_sleep_summary"
 			android:defaultValue="false" />
@@ -47,6 +51,7 @@
 	
         <com.legion.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
+        android:icon="@drawable/ic_three_finger"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />

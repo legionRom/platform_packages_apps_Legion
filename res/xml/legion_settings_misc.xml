@@ -24,6 +24,7 @@
     <Preference
         android:key="wakelock_blocker"
         android:fragment="com.legion.settings.fragments.WakeLockBlocker"
+        android:icon="@drawable/ic_wakelock_blocker"
         android:title="@string/wakelock_blocker_title" />
 		
     <Preference
@@ -35,6 +36,6 @@
         android:key="screenstate_category" 
         android:title="@string/screen_state_toggles_title"  
         android:summary="@string/screen_state_toggles_summary"  
-        android:fragment="com.legion.settings.fragments.ScreenStateToggles" />
-		
+        android:fragment="com.legion.settings.fragments.ScreenStateToggles" 
+        android:icon="@drawable/ic_alarm_blocker" />
  </PreferenceScreen>
