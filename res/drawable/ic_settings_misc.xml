@@ -5,6 +5,7 @@
         android:viewportWidth="24.0"
         android:viewportHeight="24.0"
         android:tint="?android:attr/colorAccent">
+
     <path
         android:pathData="M0,0h24v24H0V0z" />
     <path
