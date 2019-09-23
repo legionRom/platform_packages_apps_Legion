@@ -73,5 +73,10 @@
         android:key="global_actions_soundpanel"
         android:title="@string/global_actions_soundpanel"
         android:defaultValue="false" /-->
+		
+    <com.beast.settings.preference.SystemSettingSwitchPreference
+        android:key="global_actions_onthego"
+        android:title="@string/global_actions_onthego_title"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
