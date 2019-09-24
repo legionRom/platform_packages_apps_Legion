@@ -19,16 +19,29 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_settings_title" >
 	
-    <Preference
-        android:key="global_actions"
-        android:title="@string/global_actions_title"
-        android:summary="@string/global_actions_summary"
-        android:fragment="com.legion.settings.GlobalActionsSettings" />
+    <PreferenceCategory
+        android:key="power_button_category"
+        android:title="@string/power_button_category_title" />
 
-    <com.legion.settings.preference.SecureSettingSwitchPreference
-        android:key="advanced_reboot"
-        android:title="@string/global_actions_advanced_reboot_title"
-        android:summary="@string/global_actions_advanced_reboot_summary"
-        android:defaultValue="true" />
+        <com.legion.settings.preference.SecureSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/global_actions_advanced_reboot_title"
+            android:summary="@string/global_actions_advanced_reboot_summary"
+            android:defaultValue="true" />
 
+        <Preference
+            android:key="global_actions"
+            android:title="@string/global_actions_title"
+            android:summary="@string/global_actions_summary"
+            android:fragment="com.legion.settings.GlobalActionsSettings" />
+
+    <PreferenceCategory
+        android:key="volume_button_category"
+        android:title="@string/volume_button_category_title" />
+
+        <Preference
+            android:key="vol_steps"
+            android:title="@string/volume_steps_fragment_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="com.legion.settings.VolumeStepsFragment" />
 </PreferenceScreen>
