@@ -45,7 +45,10 @@ import java.util.List;
 
 public class StatusbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
-private CustomSeekBarPreference mThreshold;
+    private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
+
+    private CustomSeekBarPreference mThreshold;
+    private SwitchPreference mShowLteFourGee;
     private SystemSettingSwitchPreference mNetMonitor;
 
     @Override
@@ -68,6 +71,10 @@ private CustomSeekBarPreference mThreshold;
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
 
+        mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
+        mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
+        mShowLteFourGee.setOnPreferenceChangeListener(this);
     }
 
 
@@ -76,7 +83,7 @@ private CustomSeekBarPreference mThreshold;
         return MetricsProto.MetricsEvent.LEGION_SETTINGS;
     }
 
-@Override
+    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 
 if (preference == mNetMonitor) {
@@ -93,9 +100,14 @@ if (preference == mNetMonitor) {
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
             return true;
-	}
-	    return false;
-	}
+        } else if (preference == mShowLteFourGee) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LTE_FOURGEE, value ? 1 : 0);
+            return true;
+        }
+        return false;
+    }
 
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
