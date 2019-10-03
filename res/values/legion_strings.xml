@@ -27,6 +27,9 @@
 
     <string name="lockscreen_title">Lock Screen</string>
 
+    <string name="statusbar_title">Status Bar</string>
+
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
@@ -68,4 +71,9 @@
 
     <!-- Lockscreen Categories -->
     <string name="ls_disable_elements">Elements</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
+
 </resources>
