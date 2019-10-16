@@ -83,6 +83,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
     private SwitchPreference mHwKeyDisable;
     private SystemSettingSwitchPreference mSwapKeysPreference;
     private SwitchPreference mDisableNavigationKeys;
+    private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
 
     @Override
@@ -99,6 +100,8 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
 
         // Only visible on devices that does not have a navigation bar already
         if (ActionUtils.isHWKeysSupported(getActivity())) {
+            mDisableNavigationKeys.setOnPreferenceChangeListener(this);
+            mHandler = new Handler();
             // Remove keys that can be provided by the navbar
             updateDisableNavkeysOption();
             updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
@@ -225,6 +228,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         setActionPreferencesEnabled(keysDisabled == 0);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
@@ -273,6 +277,23 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     Toast.LENGTH_SHORT).show();
             }
             return true;
+        } else if (preference == mDisableNavigationKeys) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean isChecked = ((Boolean) newValue);
+            mDisableNavigationKeys.setEnabled(false);
+            writeDisableNavkeysOption(isChecked);
+            updateDisableNavkeysOption();
+            updateDisableNavkeysCategories(true);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1500);
+            return true;
         }
         return false;
 
@@ -320,27 +341,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         if (appSwitchCategory != null) {
             appSwitchCategory.setEnabled(!navbarEnabled);
         }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mDisableNavigationKeys) {
-            mDisableNavigationKeys.setEnabled(false);
-            writeDisableNavkeysOption(mDisableNavigationKeys.isChecked());
-            updateDisableNavkeysOption();
-            updateDisableNavkeysCategories(true);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        mDisableNavigationKeys.setEnabled(true);
-                        updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
-                    }catch(Exception e){
-                    }
-                }
-            }, 1000);
-        }
-        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
