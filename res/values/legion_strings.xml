@@ -593,4 +593,10 @@
     <string name="flashlight_on_call_wait_title">Blink for call waiting</string>
     <string name="flashlight_on_call_wait_summary">Pulse flash when there\'s a call waiting</string>
 
+    <string name="aosp_gesture_title">AOSP Gestures</string>
+
+    <!-- Fingerprint unlock --> 
+    <string name="fp_unlock_keystore_title">Force FP authentication</string> 
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
+
 </resources>
