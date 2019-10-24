@@ -22,8 +22,9 @@
         android:summary="@string/lockscreen_battery_info_summary" 
         android:defaultValue="true" />
 
-<com.legion.settings.preference.SecureSettingSwitchPreference
+<com.legion.settings.preference.SecureSettingMasterSwitchPreference
             android:key="lockscreen_visualizer_enabled"
+            android:fragment="com.legion.settings.Visualizer"
             android:title="@string/lockscreen_visualizer_enable"
             android:summary="@string/lockscreen_visualizer_enable_summary"
             android:defaultValue="false" />
