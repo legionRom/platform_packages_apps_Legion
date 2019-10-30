@@ -25,6 +25,8 @@
 
     <string name="navigation_title">Navigation Bar</string>
 
+    <string name="lockscreen_title">Lock Screen</string>
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
@@ -59,4 +61,11 @@
     <!-- Navbar options -->
     <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_invert_layout_summary">Use inverted layout for navbar buttons</string> 
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+
+    <!-- Lockscreen Categories -->
+    <string name="ls_disable_elements">Elements</string>
 </resources>

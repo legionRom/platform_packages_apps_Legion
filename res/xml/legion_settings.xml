@@ -33,4 +33,11 @@
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+    <!-- Lock Screen -->
+        <Preference
+            android:key="lockscreen_category"
+            android:title="@string/lockscreen_title"
+            android:fragment="com.legion.settings.fragments.LockScreen"
+            android:icon="@drawable/ic_settings_lockscreen"/>
+
 </PreferenceScreen>
