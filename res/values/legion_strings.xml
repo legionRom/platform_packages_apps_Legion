@@ -23,6 +23,8 @@
 
     <string name="gestures_title">Gestures</string>
 
+    <string name="navigation_title">Navigation Bar</string>
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
@@ -53,4 +55,8 @@
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar icons</string>
     <string name="statusbar_items_summary">Toggle the visibility of icons in statusbar</string> 
+
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_invert_layout_summary">Use inverted layout for navbar buttons</string> 
 </resources>
