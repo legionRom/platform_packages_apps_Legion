@@ -23,10 +23,10 @@
             android:id="@+id/quick_settings"
             android:title="@string/quicksettings_title"
             android:fragment="com.legion.settings.QuickSettings"
-            android:layout="@layout/preference_legion_quicksettings"
-            />
-	    <!--Gesture-->
-
+            android:layout="@layout/preference_legion_quicksettings" />
+            
+	    <!--Gesture -->
+	<Preference
 	    android:key="gesture_settings"
             android:title="@string/gesture_preference_title"
             android:icon="@drawable/ic_settings_gesture"

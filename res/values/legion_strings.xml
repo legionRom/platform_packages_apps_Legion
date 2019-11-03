@@ -50,4 +50,7 @@
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
 
+    <!-- Statusbar Tuner -->
+    <string name="statusbar_items_title">Statusbar icons</string>
+    <string name="statusbar_items_summary">Toggle the visibility of icons in statusbar</string> 
 </resources>
