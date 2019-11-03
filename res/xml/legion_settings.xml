@@ -18,12 +18,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/legion_settings_title" >	
+
         <!-- Quick Settings -->
         <PreferenceScreen
             android:id="@+id/quick_settings"
             android:title="@string/quicksettings_title"
             android:fragment="com.legion.settings.QuickSettings"
-            android:layout="@layout/preference_legion_quicksettings" />
+            android:layout="@layout/preference_legion_quicksettings"
+	    android:icon="@drawable/ic_settings_quicksettings"/>
             
 	    <!--Gesture -->
 	<Preference
@@ -39,5 +41,13 @@
             android:title="@string/lockscreen_title"
             android:fragment="com.legion.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreen"/>
+
+
+<!-- Navigation Bar -->
+        <Preference
+            android:key="navigation_category"
+            android:title="@string/navigation_title"
+	        android:fragment="com.legion.settings.fragments.Navigation"
+            android:icon="@drawable/ic_settings_navigation"/>
 
 </PreferenceScreen>
