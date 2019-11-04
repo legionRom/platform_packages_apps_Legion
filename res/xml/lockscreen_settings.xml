@@ -6,7 +6,7 @@
 <PreferenceCategory
         android:key="ls_disable_elements"
         android:title="@string/ls_disable_elements">
-        <com.legion.support.preferences.SystemSettingSwitchPreference
+        <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="pocket_judge"
             android:title="@string/pocket_judge_title"
             android:summary="@string/pocket_judge_summary"
