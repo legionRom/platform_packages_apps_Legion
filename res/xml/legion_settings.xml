@@ -39,7 +39,8 @@
         <Preference
             android:key="lockscreen_category"
             android:title="@string/lockscreen_title"
-            android:fragment="com.legion.settings.fragments.LockScreen"
+            android:fragment="com.legion.settings.LockscreenSettings"
+            android:layout="@layout/preference_legion_lockscreensettings"	
             android:icon="@drawable/ic_settings_lockscreen"/>
 
 
