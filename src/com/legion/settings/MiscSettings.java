@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 legionOS
+ * Copyright (C) 2019 legionROMs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,13 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatusbarSettings extends SettingsPreferenceFragment implements
+public class MiscSettings extends SettingsPreferenceFragment implements
         Indexable {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.statusbar_settings);
+        addPreferencesFromResource(R.xml.misc_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
     }
@@ -64,7 +64,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                      SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.statusbar_settings;
+                    sir.xmlResId = R.xml.misc_settings;
                     result.add(sir);
                     return result;
                 }

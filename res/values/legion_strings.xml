@@ -21,7 +21,7 @@
 
     <string name="quicksettings_title">Quick Settings</string>
 
-    <string name="gestures_title">Gestures</string>
+    <string name="miscsettings_title">Additional Settings</string>
 
     <string name="navigation_title">Navigation Bar</string>
 

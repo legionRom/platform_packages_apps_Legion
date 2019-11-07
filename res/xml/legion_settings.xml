@@ -26,8 +26,15 @@
             android:fragment="com.legion.settings.QuickSettings"
             android:layout="@layout/preference_legion_quicksettings"
 	    android:icon="@drawable/ic_settings_quicksettings"/>
-           
-   <!-- Gesture -->
+    
+	<!-- Status Bar -->
+        <Preference
+            android:key="statusbar_category"
+            android:title="@string/statusbar_title"
+            android:fragment="com.legion.settings.StatusbarSettings"
+            android:icon="@drawable/ic_settings_statusbar"/>
+       
+        <!-- Gesture -->
 	<Preference
 	    android:key="gesture_settings"
             android:title="@string/gesture_preference_title"
@@ -43,4 +50,10 @@
             android:layout="@layout/preference_legion_lockscreensettings"	
             android:icon="@drawable/ic_settings_lockscreen"/>
 
+	<!-- Misc Settings -->
+        <PreferenceScreen
+            android:id="@+id/misc_settings"
+            android:title="@string/miscsettings_title"
+            android:fragment="com.legion.settings.MiscSettings"
+            android:layout="@layout/preference_legion_miscsettings"/>
 </PreferenceScreen>
