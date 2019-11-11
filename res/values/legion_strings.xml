@@ -28,7 +28,7 @@
     <string name="lockscreen_title">Lock Screen</string>
 
     <string name="statusbar_title">Status Bar</string>
-
+    <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
 
 
