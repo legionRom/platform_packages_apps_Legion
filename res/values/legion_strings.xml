@@ -24,13 +24,9 @@
     <string name="miscsettings_title">Additional Settings</string>
     <string name="button_settings_title">Buttons</string>
     <string name="navigation_title">Navigation Bar</string>
-
-    <string name="lockscreen_title">Lock Screen</string>
-
     <string name="statusbar_title">Status Bar</string>
     <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
-
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
@@ -67,13 +63,6 @@
     <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_invert_layout_summary">Use inverted layout for navbar buttons</string> 
 
-    <!-- Pocket judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
-
-    <!-- Lockscreen Categories -->
-    <string name="ls_disable_elements">Elements</string>
-
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
@@ -89,7 +78,6 @@
     <string name="global_actions_soundpanel">Sound Panel</string>
     <string name="global_actions_users">Users</string>
     <string name="global_actions_screenshot">Screenshot</string>
-    <string name="global_actions_screenrecord">Screenrecord</string>
     <string name="global_actions_flashlight">Flashlight</string>
     <string name="global_actions_emergency">Emergency</string>
     <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
@@ -126,4 +114,6 @@
     <string name="torch_power_button_gesture_dt_toast">Jump to camera gesture is now disabled</string>
     <string name="torch_power_button_gesture_lp">Long press power button</string>
 
+=======
+>>>>>>> parent of 0755225... Legion: Add Pocket judge
 </resources>

@@ -42,7 +42,6 @@
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
-
 <!-- Buttons -->
         <Preference
             android:key="button_settings"
@@ -50,16 +49,6 @@
             android:fragment="com.legion.settings.ButtonSettings"
 	    android:layout="@layout/preference_legion_buttons"
 	    />
-
-
-
-    <!-- Lock Screen -->
-        <Preference
-            android:key="lockscreen_category"
-            android:title="@string/lockscreen_title"
-            android:fragment="com.legion.settings.LockscreenSettings"
-            android:layout="@layout/preference_legion_lockscreensettings"	
-            android:icon="@drawable/ic_settings_lockscreen"/>
 
 	<!-- Misc Settings -->
         <PreferenceScreen
