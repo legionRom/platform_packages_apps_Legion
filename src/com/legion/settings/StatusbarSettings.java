@@ -23,7 +23,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import com.legion.settings.preference.CustomSeekBarPreference; 
+import com.legion.settings.preference.CustomSeekBarPreference;
 import com.legion.settings.preference.SystemSettingSwitchPreference;
 
 import androidx.preference.ListPreference;
@@ -43,7 +43,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatusBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
+public class StatusbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
 private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
@@ -71,6 +71,11 @@ private CustomSeekBarPreference mThreshold;
     }
 
 
+   @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.LEGION_SETTINGS;
+    }
+
 @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 
@@ -89,11 +94,9 @@ if (preference == mNetMonitor) {
                     UserHandle.USER_CURRENT);
             return true;
 	}
+	    return false;
+	}
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.LEGION_SETTINGS;
-    }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ColtOS Android
+ * Copyright (C) 2017 legionOS Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.colt.settings.preference;
+package com.legion.settings.preference;
 
 import android.content.Context;
 import android.content.res.TypedArray;
