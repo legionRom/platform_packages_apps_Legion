@@ -52,9 +52,9 @@
 
 	<!-- Themes -->
 	<com.legion.settings.preference.CategoryLegionPreference
-	    android:key="settings_themes" 
+	    android:id="@+id/settings_themes" 
 	    android:title="@string/themes_color"
-	    androir:summary="@string/themes_summary"
+	    android:summary="@string/themes_summary"
 	    android:fragment="com.legion.settings.Themes" />
 
       <!-- Notifications -->

@@ -50,10 +50,17 @@
             android:defaultValue="true"
             android:disableDependentsState="true" />
     </PreferenceCategory> 
+
         <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="sensor_block" 
         android:title="@string/sensor_block_title" 
         android:summary="@string/sensor_block_summary" 
         android:defaultValue="false" />
+
+	<Preference
+             android:key="gaming_mode" 
+             android:title="@string/gaming_mode_title" 
+             android:summary="@string/gaming_mode_summary"
+             android:fragment="com.legion.settings.GamingMode" />
 
 </PreferenceScreen>
