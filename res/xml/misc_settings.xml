@@ -48,5 +48,11 @@
             android:summary="@string/aggressive_battery_saver_summary"
             android:defaultValue="true"
             android:disableDependentsState="true" />
-    </PreferenceCategory>
+    </PreferenceCategory> 
+        <com.legion.settings.preference.SystemSettingSwitchPreference
+        android:key="sensor_block" 
+        android:title="@string/sensor_block_title" 
+        android:summary="@string/sensor_block_summary" 
+        android:defaultValue="false" />
+
 </PreferenceScreen>
