@@ -50,6 +50,12 @@
             android:icon="@drawable/ic_settings_gesture" 
             android:fragment="com.legion.settings.GestureSettings" />
 
+      <!-- Notifications -->
+	<PreferenceScreen 
+            android:id="@+id/notifications_settings" 
+            android:title="@string/notificationssettings_title" 
+            android:fragment="com.legion.settings.NotificationsSettings" />
+
        <!-- Buttons -->
         <Preference
             android:key="button_settings"
