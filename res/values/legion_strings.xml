@@ -25,6 +25,7 @@
     <string name="button_settings_title">Buttons</string>
     <string name="navigation_title">Navigation Bar</string>
     <string name="statusbar_title">Status Bar</string>
+    <string name="gestures_title">Gestures</string>
     <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
 

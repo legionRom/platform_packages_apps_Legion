@@ -28,10 +28,10 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class Notifications extends SettingsPreferenceFragment
+public class NotificationsSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    public static final String TAG = "Notifications";
+    public static final String TAG = "NotificationsSettings";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

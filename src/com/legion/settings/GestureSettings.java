@@ -13,7 +13,7 @@ public class GestureSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.legion_settings_gestures);
+        addPreferencesFromResource(R.xml.gestures_settings);
     }
 
     @Override
