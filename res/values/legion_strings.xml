@@ -23,9 +23,10 @@
     <string name="lockscreensettings_title">Lockscreen Settings</string>
     <string name="miscsettings_title">Additional Settings</string>
     <string name="button_settings_title">Buttons</string>
+    <string name="notifications_title">Notifications</string>
     <string name="navigation_title">Navigation Bar</string>
     <string name="statusbar_title">Status Bar</string>
-    <string name="gestures_title">Gestures</string>
+    <string name="gesture_title">Gestures</string>
     <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
 
