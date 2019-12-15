@@ -13,7 +13,7 @@ public class GestureSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.gestures_settings);
+        addPreferencesFromResource(R.xml.gesture_settings);
     }
 
     @Override
