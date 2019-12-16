@@ -64,6 +64,14 @@
 	    android:layout="@layout/preference_legion_buttons"
 	    />
 
+	<!-- Themes -->
+	<PreferenceScreen
+	    android:id="@+id/themes_settings"
+	    android:title="@string/themes_title"
+	    android:fragment="com.legion.settings.ThemesSettings"
+	    android:layout="@layout/preference_legion_themessettings"
+	    />
+
 	<!-- Misc Settings -->
         <PreferenceScreen
             android:id="@+id/misc_settings"

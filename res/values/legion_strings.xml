@@ -18,9 +18,9 @@
 
     <!-- LegionROMs Extras -->
     <string name="legion_settings_title">Legion Settings</string>
-
+    <string name="themes_title">Themes</string>
     <string name="quicksettings_title">Quick Settings</string>
-    <string name="lockscreensettings_title">Lockscreen Settings</string>
+    <string name="lockscreensettings_title">Lockscreen</string>
     <string name="miscsettings_title">Additional Settings</string>
     <string name="button_settings_title">Buttons</string>
     <string name="notifications_title">Notifications</string>
