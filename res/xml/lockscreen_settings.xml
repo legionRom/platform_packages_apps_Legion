@@ -49,4 +49,11 @@
             android:summary="@string/fp_unlock_keystore_summary"
             android:defaultValue="false" />
 
+<!-- FOD icon picker -->
+<Preference
+        android:key="fod_icon_picker_category"
+        android:title="@string/fod_icon_picker_title"
+        android:summary="@string/fod_icon_picker_summary"
+        android:fragment="com.legion.settings.FODIconPickerFragment" />
+
 </PreferenceScreen>
