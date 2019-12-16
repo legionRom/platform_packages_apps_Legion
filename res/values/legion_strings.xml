@@ -282,4 +282,7 @@
     <string name="lockscreen_hide_shortcuts_title">Hide Bottom Shortcuts</string>
     <string name="lockscreen_hide_shortcuts_summary">Hide Left-Right Shortcuts on secure lock screens</string>
 
+    <string name="theme_select_title">Themes</string>
+    <string name="theme_select_summary">Browse and select installed themes</string>
+
 </resources>
