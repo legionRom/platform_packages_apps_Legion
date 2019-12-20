@@ -23,6 +23,7 @@
         <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/quick_settings"
             android:title="@string/quicksettings_title"
+	    android:summary="@string/quicksettings_summary"
             android:fragment="com.legion.settings.QuickSettings"
             />
     
@@ -30,6 +31,7 @@
         <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/statusbar_settings"
             android:title="@string/statusbar_title"
+	    android:summary="@string/statusbar_summary"
             android:fragment="com.legion.settings.StatusbarSettings"
             />
        
@@ -37,6 +39,7 @@
 	<com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/lockscreen_settings" 
             android:title="@string/lockscreensettings_title" 
+	    android:summary="@string/lockscreen_summary"
             android:fragment="com.legion.settings.LockscreenSettings" 
             />
 
@@ -44,14 +47,14 @@
 	<com.legion.settings.preference.CategoryLegionPreference
 	    android:id="@+id/gesture_settings"
             android:title="@string/gesture_title"
-           
+	    android:summary="@string/gesture_summary"
             android:fragment="com.legion.settings.GestureSettings" />
 
       <!-- Notifications -->
 	<com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/notifications_settings" 
             android:title="@string/notifications_title"
-	   
+	    android:summary="@string/notifications_summary"
 	    android:fragment="com.legion.settings.NotificationsSettings"
 	    />
 
@@ -60,13 +63,14 @@
             android:id="@+id/button_settings"
             android:title="@string/button_settings_title"
             android:fragment="com.legion.settings.ButtonSettings"
-	    
+	    android:summary="@string/buttonsettings_summary"
 	    />
 
 	<!-- Misc Settings -->
         <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/misc_settings"
             android:title="@string/miscsettings_title"
+	    android:summary="@string/misc_summary"
             android:fragment="com.legion.settings.MiscSettings"
             />
 </PreferenceScreen>

@@ -20,6 +20,7 @@
     <string name="legion_settings_title">Legion Settings</string>
 
     <string name="quicksettings_title">Quick Settings</string>
+    <string name="quicksettings_summary">Quick settings Customizations</string>
     <string name="lockscreensettings_title">Lockscreen </string>
     <string name="miscsettings_title">Additional Settings</string>
     <string name="button_settings_title">Buttons</string>
@@ -281,5 +282,14 @@
 
     <string name="lockscreen_hide_shortcuts_title">Hide Bottom Shortcuts</string>
     <string name="lockscreen_hide_shortcuts_summary">Hide Left-Right Shortcuts on secure lock screens</string>
+
+    <string name="buttonsettings_summary">Perform custom button actions</string>
+    <string name="statusbar_summary">Statusbar Customizations</string>
+    <string name="lockscreen_summary">Various options for lockscreen</string>
+    <string name="navbar_summary">Various options for Navbar</string>
+    <string name="powermenu_summary">Customize elements to be displayed in power menu</string> 
+    <string name="gesture_summary">Gesture Customizations</string>
+    <string name="notifications_summary">Notifications and Incall settings</string>
+    <string name="misc_summary">Miscellaneous things to be checked here</string>
 
 </resources>
