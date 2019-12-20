@@ -20,54 +20,53 @@
     android:title="@string/legion_settings_title" >	
 
         <!-- Quick Settings -->
-        <PreferenceScreen
+        <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/quick_settings"
             android:title="@string/quicksettings_title"
             android:fragment="com.legion.settings.QuickSettings"
-            android:layout="@layout/preference_legion_quicksettings"/>
+            />
     
 	<!-- Status Bar -->
-        <PreferenceScreen
+        <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/statusbar_settings"
             android:title="@string/statusbar_title"
             android:fragment="com.legion.settings.StatusbarSettings"
-            android:layout="@layout/preference_legion_statusbarsettings"/>
+            />
        
 	<!-- Lockscreen -->
-	<PreferenceScreen 
+	<com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/lockscreen_settings" 
             android:title="@string/lockscreensettings_title" 
             android:fragment="com.legion.settings.LockscreenSettings" 
-            android:layout="@layout/preference_legion_lockscreensettings" 
             />
 
         <!-- Gesture -->
-	<PreferenceScreen
+	<com.legion.settings.preference.CategoryLegionPreference
 	    android:id="@+id/gesture_settings"
             android:title="@string/gesture_title"
-            android:layout="@layout/preference_legion_gesturesettings"
+           
             android:fragment="com.legion.settings.GestureSettings" />
 
       <!-- Notifications -->
-	<PreferenceScreen 
+	<com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/notifications_settings" 
             android:title="@string/notifications_title"
-	    android:layout="@layout/preference_legion_notificationssettings"
+	   
 	    android:fragment="com.legion.settings.NotificationsSettings"
 	    />
 
        <!-- Buttons -->
-        <PreferenceScreen
+        <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/button_settings"
             android:title="@string/button_settings_title"
             android:fragment="com.legion.settings.ButtonSettings"
-	    android:layout="@layout/preference_legion_buttons"
+	    
 	    />
 
 	<!-- Misc Settings -->
-        <PreferenceScreen
+        <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/misc_settings"
             android:title="@string/miscsettings_title"
             android:fragment="com.legion.settings.MiscSettings"
-            android:layout="@layout/preference_legion_miscsettings"/>
+            />
 </PreferenceScreen>
