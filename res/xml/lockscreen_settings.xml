@@ -66,6 +66,7 @@
         android:summary="@string/fod_recog_animation_summary"
         android:defaultValue="false" />
 
+
     <com.legion.settings.preference.SystemSettingListPreference 
             android:key="fod_anim" 
             android:title="@string/fod_recog_animation_effect_title" 
@@ -75,7 +76,15 @@
             android:defaultValue="0"
             android:dependency="fod_recognizing_animation" />
 
-	<!-- FOD pressed state-->
+<!-- FOD use wallpaper color -->
+<com.legion.settings.preference.SystemSettingSwitchPreference
+        android:key="fod_icon_wallpaper_color"
+        android:title="@string/fod_wallpaper_color"
+        android:summary="@string/fod_wallpaper_color_summary"
+        android:defaultValue="false" />
+
+<!-- FOD pressed state-->
+
         <com.legion.settings.preference.SystemSettingListPreference
             android:key="fod_pressed_state"
             android:icon="@drawable/ic_fp"
