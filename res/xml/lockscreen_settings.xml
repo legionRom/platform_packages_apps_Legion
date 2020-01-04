@@ -30,4 +30,11 @@
         android:title="@string/lockscreen_hide_shortcuts_title" 
         android:summary="@string/lockscreen_hide_shortcuts_summary"
         android:defaultValue="false" />
+
+<!-- LockScreen UI -->
+<com.legion.settings.preference.CategoryLegionPreference
+        android:key="lockscreen_ui"
+        android:title="@string/lockscreen_ui_title"
+        android:summary="@string/lockscreen_ui_summary"
+        android:fragment="com.legion.settings.LockscreenUi" />
 </PreferenceScreen>
