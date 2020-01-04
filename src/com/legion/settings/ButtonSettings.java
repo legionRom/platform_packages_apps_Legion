@@ -148,6 +148,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     }
                 }
         } else {
+	    mAnbiEnable.setChecked(false);
             prefScreen.removePreference(hwkeyCat);
         }
 
@@ -208,6 +209,8 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             prefScreen.removePreference(assistCategory);
         }
 
+	mAnbiEnable.setEnabled(keysDisabled == 0);
+
         // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
 
@@ -246,7 +249,13 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
-
+	    mAnbiEnable.setEnabled(!value);
+            mAnbiEnable.setChecked(!value);
+            return true;
+        } else if (preference == mAnbiEnable) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.System.ANBI_ENABLED_OPTION,
+                    value ? 1 : 0);
             return true;
         } else if (preference == mTorchPowerButton) {
             int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
