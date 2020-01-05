@@ -420,6 +420,8 @@
     <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
 
     <!-- Navbar options -->
+    <string name="enable_navbar_title">Enable</string>
+    <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
     <string name="nav_bar_tuner_title">Navigation bar options</string>
     <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
 </resources>
