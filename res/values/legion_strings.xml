@@ -418,4 +418,8 @@
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Enable on-screen nav bar</string>
     <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
+
+    <!-- Navbar options -->
+    <string name="nav_bar_tuner_title">Navigation bar options</string>
+    <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
 </resources>
