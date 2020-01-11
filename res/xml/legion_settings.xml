@@ -50,6 +50,13 @@
 	    android:summary="@string/gesture_summary"
             android:fragment="com.legion.settings.GestureSettings" />
 
+	<!-- Themes -->
+	<com.legion.settings.preference.CategoryLegionPreference
+	    android:key="settings_themes" 
+	    android:title="@string/themes_color"
+	    androir:summary="@string/themes_summary"
+	    android:fragment="com.legion.settings.Themes" />
+
       <!-- Notifications -->
 	<com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/notifications_settings" 
