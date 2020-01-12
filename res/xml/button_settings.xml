@@ -49,6 +49,7 @@
             android:title="@string/volume_steps_fragment_title"
             android:summary="@string/volume_steps_summary"
             android:fragment="com.legion.settings.VolumeStepsFragment" />			
+
         <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="volume_button_music_control"
             android:summary="@string/volume_rocker_music_controls_summary"
@@ -106,6 +107,12 @@
     <PreferenceCategory
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
+
+	<com.legion.settings.preference.SystemSettingSwitchPreference 
+            android:key="allow_incall_home" 
+            android:title="@string/allow_incall_home_title" 
+            android:summary="@string/allow_incall_home_summary"
+            android:defaultValue="true" />
 
         <com.legion.settings.preference.ActionPreference
             android:key="hwkeys_button_home_single_tap"
