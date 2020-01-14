@@ -49,8 +49,8 @@ import androidx.preference.PreferenceScreen;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.legion.settings.preferences.PackageListAdapter;
-import com.legion.settings.preferences.PackageListAdapter.PackageItem;
+import com.legion.settings.preference.PackageListAdapter;
+import com.legion.settings.preference.PackageListAdapter.PackageItem;
 import com.android.internal.util.hwkeys.ActionUtils;
 
 import java.util.ArrayList;

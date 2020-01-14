@@ -20,14 +20,14 @@
     android:title="@string/gaming_mode_title">
 
     <!-- Master switch -->
-    <com.legion.settings.preferences.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_enabled"
         android:title="@string/gaming_mode_enabled_title"
         android:summary="@string/gaming_mode_enabled_summary"
         android:defaultValue="false" />
 
     <!-- Heads up -->
-    <com.legion.settings.preferences.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_headsup_toggle"
         android:title="@string/gaming_mode_headsup_title"
         android:summary="@string/gaming_mode_headsup_summary"
@@ -35,7 +35,7 @@
         android:defaultValue="true" />
 
     <!-- Hardware keys -->
-    <com.legion.settings.preferences.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_hw_keys_toggle"
         android:title="@string/gaming_mode_hardware_keys_title"
         android:summary="@string/gaming_mode_hardware_keys_summary"
@@ -43,14 +43,14 @@
         android:defaultValue="false" />
 
     <!-- Manual brightness -->
-    <com.legion.settings.preferences.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_manual_brightness_toggle"
         android:title="@string/gaming_mode_brightness_title"
         android:summary="@string/gaming_mode_brightness_summary"
         android:dependency="gaming_mode_enabled"
         android:defaultValue="true" />
 
-    <com.legion.settings.preferences.SystemSettingListPreference
+    <com.legion.settings.preference.SystemSettingListPreference
         android:key="gaming_mode_ringer_mode"
         android:title="@string/gaming_mode_ringer_title"
         android:entries="@array/gaming_mode_ringer_entries"
@@ -59,7 +59,7 @@
         android:dependency="gaming_mode_enabled"
         android:summary="%s" />
 
-    <com.legion.settings.preferences.SystemSettingListPreference
+    <com.legion.settings.preference.SystemSettingListPreference
         android:key="gaming_mode_notifications"
         android:title="@string/gaming_mode_notifications_title"
         android:entries="@array/gaming_mode_notifications_entries"
@@ -69,7 +69,7 @@
         android:summary="%s" />
 
     <!-- Dynamic gaming mode -->
-    <com.legion.settings.preferences.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_dynamic_state"
         android:title="@string/gaming_mode_dynamic_title"
         android:summary="@string/gaming_mode_dynamic_summary"
