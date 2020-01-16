@@ -86,30 +86,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-// screen off torch
-        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
-        int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
-        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
-        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
-        mTorchPowerButton.setOnPreferenceChangeListener(this);
-    }
-
-    private ListPreference initActionList(String key, int value) {
-        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
-        list.setValue(Integer.toString(value));
-        list.setSummary(list.getEntry());
-        list.setOnPreferenceChangeListener(this);
-        return list;
-    }
-
-    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
-        String value = (String) newValue;
-        int index = pref.findIndexOfValue(value);
-        pref.setSummary(pref.getEntries()[index]);
-        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
-    }
-
         final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_HWKEY);
@@ -161,6 +137,31 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         } else {
             prefScreen.removePreference(hwkeyCat);
         }
+
+// screen off torch
+        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
+        int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
+        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
+        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
+        mTorchPowerButton.setOnPreferenceChangeListener(this);
+
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+    }
 
         // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
@@ -222,21 +223,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         ContentResolver resolver = getActivity().getContentResolver();
         boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
                     Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1) == 0;
-        if (preference == mTorchPowerButton) {
-            int mTorchPowerButtonValue = Integer.valueOf((String) objValue);
-            int index = mTorchPowerButton.findIndexOfValue((String) objValue);
-            mTorchPowerButton.setSummary(
-                    mTorchPowerButton.getEntries()[index]);
-            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
-                    mTorchPowerButtonValue);
-            if (mTorchPowerButtonValue == 1 && DoubleTapPowerGesture) {
-                //if doubletap for torch is enabled, switch off double tap for camera
-                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
-                        1);
-                Toast.makeText(getActivity(),
-                    (R.string.torch_power_button_gesture_dt_toast),
-                    Toast.LENGTH_SHORT).show();
-            }
 
         if (preference == mBacklightTimeout) {
             String BacklightTimeout = (String) newValue;
@@ -264,6 +250,22 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
 
+            return true;
+        } else if (preference == mTorchPowerButton) {
+            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
+            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
+            mTorchPowerButton.setSummary(
+                    mTorchPowerButton.getEntries()[index]);
+            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
+                    mTorchPowerButtonValue);
+            if (mTorchPowerButtonValue == 1 && DoubleTapPowerGesture) {
+                //if doubletap for torch is enabled, switch off double tap for camera
+                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
+                        1);
+                Toast.makeText(getActivity(),
+                    (R.string.torch_power_button_gesture_dt_toast),
+                    Toast.LENGTH_SHORT).show();
+            }
             return true;
         }
         return false;
