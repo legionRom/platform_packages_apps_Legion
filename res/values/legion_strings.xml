@@ -491,6 +491,7 @@
     <string name="lockscreen_clock_selection_sammy_accent">Sammy accent</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy accent (darker hour)</string>
     <string name="lockscreen_clock_text_style">Text clock</string>
+    <string name="lockscreen_clock_analog_style">Analog Q Style</string>
 
     <!-- Lockscreen Date styles -->
     <string name="lockscreen_date_selection_title">Date style</string>

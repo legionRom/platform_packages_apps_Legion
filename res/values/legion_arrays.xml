@@ -414,6 +414,7 @@
         <item>@string/lockscreen_clock_selection_sammy_accent</item>
         <item>@string/lockscreen_clock_selection_sammy_accent_alt</item>
 	<item>@string/lockscreen_clock_text_style</item>
+	<item>@string/lockscreen_clock_analog_style</item>
     </string-array>
 
     <string-array name="lockscreen_clock_selection_values" translatable="false">
@@ -429,6 +430,7 @@
         <item>10</item>
         <item>11</item>
 	<item>12</item>
+	<item>13</item>
     </string-array>
 
     <!-- Lockscreen date styles -->
