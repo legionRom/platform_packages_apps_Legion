@@ -74,4 +74,10 @@
         android:entryValues="@array/quick_pulldown_values"
         android:persistent="false" />
 
+    <com.legion.settings.preference.SystemSettingSwitchPreference
+            android:key="dismiss_all_button"
+            android:title="@string/enable_clear_all_button"
+            android:summary="@string/enable_clear_all_button_summary"
+            android:defaultValue="true" />
+
 </PreferenceScreen>
