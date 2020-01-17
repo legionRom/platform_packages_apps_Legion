@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2019 LegionOS
 
@@ -386,4 +386,7 @@
     <!-- Enable keys backlight-->
     <string name="button_brightness_sw_title">Enable backlight</string>
 
+    <!-- Heads up options -->
+    <string name="less_boring_heads_up_title">Dialer HeadsUp</string>
+    <string name="less_boring_heads_up_summary">Show heads up only for dialer app and disable all others</string>
 </resources>
