@@ -15,6 +15,9 @@
     android:title="@string/lockscreen_ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:title="Lock Clock"/>
+
     <com.legion.settings.preference.SecureSettingListPreference
         android:key="lockscreen_clock_selection"
         android:title="@string/lockscreen_clock_title"
@@ -22,14 +25,6 @@
         android:entries="@array/lockscreen_clock_selection_entries"
         android:entryValues="@array/lockscreen_clock_selection_values"
         android:defaultValue="2" />
-
-    <com.legion.settings.preference.SecureSettingListPreference
-        android:key="lockscreen_date_selection"
-        android:title="@string/lockscreen_date_selection_title"
-        android:dialogTitle="@string/lockscreen_date_dialog_title"
-        android:entries="@array/lockscreen_date_selection_entries"
-        android:entryValues="@array/lockscreen_date_selection_values"
-        android:defaultValue="0" />
 
     <ListPreference
         android:key="lock_clock_fonts"
@@ -45,10 +40,21 @@
         android:key="lockclock_font_size"
         android:title="@string/lockclock_font_size_title"
         android:max="101"
-        settings:min="10"
+        settings:min="65"
         settings:units="dp"
         android:persistent="false"
-        android:defaultValue="54" />
+        android:defaultValue="78" />
+
+    <PreferenceCategory
+        android:title="Lock Date"/>
+
+    <com.legion.settings.preference.SecureSettingListPreference
+        android:key="lockscreen_date_selection"
+        android:title="@string/lockscreen_date_selection_title"
+        android:dialogTitle="@string/lockscreen_date_dialog_title"
+        android:entries="@array/lockscreen_date_selection_entries"
+        android:entryValues="@array/lockscreen_date_selection_values"
+        android:defaultValue="0" />
 
     <ListPreference
         android:key="lock_date_fonts"
@@ -69,6 +75,18 @@
         android:defaultValue="18"
         android:persistent="false" />
 
+    <com.legion.settings.preference.CustomSeekBarPreference
+        android:key="lockdate_font_size"
+        android:title="@string/lockdate_font_size_title"
+        android:max="25"
+        settings:min="10"
+        settings:units="dp"
+        android:defaultValue="18"
+        android:persistent="false" />
+
+    <PreferenceCategory
+        android:title="Owner Info"/>
+	
     <ListPreference
         android:key="lock_ownerinfo_fonts"
         android:title="@string/lock_ownerinfo_font_title"
