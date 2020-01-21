@@ -390,7 +390,15 @@
     <string name="less_boring_heads_up_title">Dialer HeadsUp</string>
     <string name="less_boring_heads_up_summary">Show heads up only for dialer app and disable all others</string>
 
+    <!-- OOS Clear All -->
     <string name="enable_clear_all_button">Replace clear all text with nice button</string>
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
 
+    <!-- Blur QS -->
+    <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
+    <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
+
+    <!-- Oneui -->
+    <string name="enable_oneui">OneUI</string>
+    <string name="enable_oneui_summary">Show spacer above settings actionbar for easier use with one hand\nNOTE: restart settings app to see effect</string>
 </resources>
