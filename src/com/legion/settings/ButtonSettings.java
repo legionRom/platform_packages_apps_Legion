@@ -146,23 +146,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
         mTorchPowerButton.setOnPreferenceChangeListener(this);
 
-    }
-
-    private ListPreference initActionList(String key, int value) {
-        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
-        list.setValue(Integer.toString(value));
-        list.setSummary(list.getEntry());
-        list.setOnPreferenceChangeListener(this);
-        return list;
-    }
-
-    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
-        String value = (String) newValue;
-        int index = pref.findIndexOfValue(value);
-        pref.setSummary(pref.getEntries()[index]);
-        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
-    }
-
         // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
