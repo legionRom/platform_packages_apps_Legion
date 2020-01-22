@@ -34,6 +34,7 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.legion.settings.R;
+import com.legion.settings.preference.QsBlurAlphaPreferenceController;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +71,7 @@ public class Themesui extends DashboardFragment implements Indexable  {
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
+        controllers.add(new QsBlurAlphaPreferenceController(context));
         return controllers;
     }
 
