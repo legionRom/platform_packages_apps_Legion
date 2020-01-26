@@ -35,6 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.legion.settings.R;
 import com.legion.settings.preference.QsBlurAlphaPreferenceController;
+import com.legion.settings.preference.QsBlurIntensityPreferenceController;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +73,7 @@ public class Themesui extends DashboardFragment implements Indexable  {
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
         controllers.add(new QsBlurAlphaPreferenceController(context));
+        controllers.add(new QsBlurIntensityPreferenceController(context));
         return controllers;
     }
 

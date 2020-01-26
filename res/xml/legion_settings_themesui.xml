@@ -37,13 +37,31 @@
             android:key="android.theme.customization.icon_pack.android"
             android:title="@string/theme_customization_sysui_icon_title"/>
 
-    </PreferenceCategory>
-
         <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="qs_blur"
             android:title="@string/blur_quicksettings"
             android:summary="@string/blur_quicksettings_subtitle"
             android:defaultValue="true" />
+
+	<com.legion.settings.preference.SystemSettingSeekBarPreference
+	    android:key="qs_blur_alpha"
+            android:title="@string/qs_blur_alpha_title"
+            android:summary="@string/qs_blur_alpha_summary"
+            android:max="100"
+            settings:min="1"
+            settings:units="%"
+            android:persistent="false"
+            android:dependency="qs_blur" />
+
+	<com.legion.settings.preference.SystemSettingSeekBarPreference
+	    android:key="qs_blur_intensity"
+            android:title="@string/qs_blur_intensity_title"
+            android:summary="@string/qs_blur_intensity_summary"
+            android:max="100"
+            settings:min="1"
+            settings:units="%"
+            android:persistent="false"
+            android:dependency="qs_blur" />
 
     <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_new_tint"

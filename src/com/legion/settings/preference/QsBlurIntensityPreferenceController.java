@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The AOSPProject
+ * Copyright (C) 2019-2020 The AOSP Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,20 +35,20 @@ import com.legion.settings.preference.SystemSettingSeekBarPreference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QsBlurAlphaPreferenceController extends AbstractPreferenceController implements
+public class QsBlurIntensityPreferenceController extends AbstractPreferenceController implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String QS_BLUR_ALPHA = "qs_blur_alpha";
+    private static final String QS_BLUR_INTENSITY = "qs_blur_intensity";
 
-    private SystemSettingSeekBarPreference mQsBlurAlpha;
+    private SystemSettingSeekBarPreference mQsBlurIntensity;
 
-    public QsBlurAlphaPreferenceController(Context context) {
+    public QsBlurIntensityPreferenceController(Context context) {
         super(context);
     }
 
     @Override
     public String getPreferenceKey() {
-        return QS_BLUR_ALPHA;
+        return QS_BLUR_INTENSITY;
     }
 
     @Override
@@ -59,19 +59,19 @@ public class QsBlurAlphaPreferenceController extends AbstractPreferenceControlle
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        mQsBlurAlpha = (SystemSettingSeekBarPreference) screen.findPreference(QS_BLUR_ALPHA);
-        int qsBlurAlpha = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.QS_BLUR_ALPHA, 100);
-        mQsBlurAlpha.setValue(qsBlurAlpha);
-        mQsBlurAlpha.setOnPreferenceChangeListener(this);
+        mQsBlurIntensity = (SystemSettingSeekBarPreference) screen.findPreference(QS_BLUR_INTENSITY);
+        int qsBlurIntensity = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.QS_BLUR_INTENSITY, 100);
+        mQsBlurIntensity.setValue(qsBlurIntensity);
+        mQsBlurIntensity.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mQsBlurAlpha) {
+        if (preference == mQsBlurIntensity) {
             int value = (Integer) newValue;
             Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.QS_BLUR_ALPHA, value);
+                    Settings.System.QS_BLUR_INTENSITY, value);
             return true;
         }
         return false;
