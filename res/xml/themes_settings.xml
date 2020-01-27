@@ -10,3 +10,16 @@
         android:entries="@array/theme_type_titles"
         android:entryValues="@array/theme_type_values"
         android:defaultValue="1"/>
+
+	<com.legion.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_blur_alpha"
+            android:title="@string/qs_blur_alpha_title"
+            android:summary="@string/qs_blur_alpha_summary"
+            android:max="100"
+            settings:min="1"
+            android:defaultValue="100"
+            settings:units="%"
+            android:dependency="qs_blur" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

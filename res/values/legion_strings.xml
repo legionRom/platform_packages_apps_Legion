@@ -397,6 +397,8 @@
     <!-- Blur QS -->
     <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
     <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
+    <string name="qs_blur_alpha_title">Blur alpha</string>
+    <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
 
     <!-- Oneui -->
     <string name="enable_oneui">OneUI</string>
