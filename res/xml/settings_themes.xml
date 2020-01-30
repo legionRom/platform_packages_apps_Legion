@@ -49,5 +49,12 @@
             android:title="@string/enable_oneui" 
             android:summary="@string/enable_oneui_summary" 
             android:defaultValue="true" />
+
+    <PreferenceScreen 
+         android:key="rounded_corners" 
+         android:title="@string/corners_title" 
+         android:summary="@string/corners_summary"
+         android:fragment="com.legion.settings.RoundedCornersSettings" />
+
 </PreferenceScreen>
 
