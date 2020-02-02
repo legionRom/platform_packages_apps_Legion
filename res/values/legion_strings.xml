@@ -424,4 +424,13 @@
     <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
     <string name="nav_bar_tuner_title">Navigation bar options</string>
     <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
+
+    <!-- Themes -->
+    <string name="theme_type_title">ColtOS themes</string>
+    <string name="theme_type_summary">Select theme</string>
+    <string name="theme_type_light">Light</string>
+    <string name="theme_type_pitch_black">Pitch black</string>
+    <string name="theme_type_solarized_dark">Solarized dark</string>
+    <string name="theme_type_baked_green">Baked Green</string>
+    <string name="theme_type_choco_x">Choco Colt</string>
 </resources>
