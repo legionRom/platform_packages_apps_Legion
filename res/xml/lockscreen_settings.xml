@@ -63,4 +63,18 @@
         android:summary="@string/fod_recog_animation_summary"
         android:defaultValue="false" />
 
+<!-- FOD pressed state-->
+        <com.legion.settings.preference.SystemSettingListPreference
+            android:key="fod_pressed_state"
+            android:icon="@drawable/ic_fp"
+            android:dialogTitle="@string/fod_pressed_state_title"
+            android:title="@string/fod_pressed_state_title"
+            android:summary="@string/fod_pressed_state_summary"
+            android:entries="@array/fod_pressed_state_entries"
+            android:entryValues="@array/fod_pressed_state_values"
+            android:defaultValue="2" />
+
+        <Preference
+            android:summary="@string/fod_pressed_state_footer" />
+
 </PreferenceScreen>
