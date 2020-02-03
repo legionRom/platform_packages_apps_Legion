@@ -48,6 +48,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String PREF_THEME_SWITCH = "theme_switch";
+    private static final String QS_BLUR_INTENSITY = "qs_blur_intensity";
 
     private IOverlayManager mOverlayService;
     private UiModeManager mUiModeManager;
@@ -55,6 +56,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mThemeSwitch;
+    private CustomSeekBarPreference mQsBlurIntensity;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,6 +74,12 @@ public class Themes extends SettingsPreferenceFragment implements
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         setupAccentPref();
 	setupThemeSwitchPref();
+
+	mQsBlurIntensity = (CustomSeekBarPreference) findPreference(QS_BLUR_INTENSITY);
+        int qsBlurIntensity = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_BLUR_INTENSITY, 100, UserHandle.USER_CURRENT);
+        mQsBlurIntensity.setValue(qsBlurIntensity);
+        mQsBlurIntensity.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -90,6 +98,10 @@ public class Themes extends SettingsPreferenceFragment implements
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(GRADIENT_COLOR_PROP, hexColor);
+	} else if (preference == mQsBlurIntensity) {
+            int valueInt = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_BLUR_INTENSITY, valueInt);
 	} else if (preference == mThemeSwitch) {
             String theme_switch = (String) objValue;
             final Context context = getContext();
