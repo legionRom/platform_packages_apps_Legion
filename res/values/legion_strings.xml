@@ -395,7 +395,7 @@
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
 
     <!-- Blur QS -->
-    <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
+    <string name="blur_quicksettings">Blur behind quick settings </string>
     <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
 
     <!-- Oneui -->
@@ -444,7 +444,9 @@
     <string name="theme_type_baked_green">Baked Green</string>
     <string name="theme_type_choco_x">Choco Colt</string>
     <string name="theme_type_dark_grey">Dark Grey</string>
-    <string name="theme_type_du_pitchblack">Pitch black</string>
+    <string name="theme_type_du_pitchblack">Pitch black</string> 
+    <string name="qs_bg_use_new_tint">Tint</string>
+    <string name="qs_bg_use_new_tint_summary">Enable QS tiles tint style</string>
 
     <!-- LockScreen UI -->
     <string name="lockscreen_ui_title">Lockscreen UI</string>
