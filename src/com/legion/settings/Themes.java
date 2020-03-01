@@ -52,6 +52,10 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String PREF_THEME_SWITCH = "theme_switch";
     private static final String QS_BLUR_INTENSITY = "qs_blur_intensity";
 
+    private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
+
+    private Preference mThemeBrowse;
+
     private IOverlayManager mOverlayService;
     private UiModeManager mUiModeManager;
 
@@ -69,6 +73,9 @@ public class Themes extends SettingsPreferenceFragment implements
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         setupAccentPref();
         setupGradientPref();
+
+    mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
+    mThemeBrowse.setEnabled(isBrowseThemesAvailable());
 
     mUiModeManager = getContext().getSystemService(UiModeManager.class);
 
@@ -156,7 +163,14 @@ public class Themes extends SettingsPreferenceFragment implements
         return true;
     }
 
-    private void setupAccentPref() {
+   private boolean isBrowseThemesAvailable() {
+        PackageManager pm = getPackageManager();
+        Intent browse = new Intent();
+        browse.setClassName("com.android.customization", "com.android.customization.picker.CustomizationPickerActivity");
+        return pm.resolveActivity(browse, 0) != null;
+    }
+
+   private void setupAccentPref() {
         mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
         String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
         int color = "-1".equals(colorVal)
