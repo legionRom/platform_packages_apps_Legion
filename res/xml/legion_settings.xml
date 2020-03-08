@@ -73,6 +73,14 @@
 	    android:summary="@string/buttonsettings_summary"
 	    />
 
+       <!-- Navigation -->
+        <com.legion.settings.preference.CategoryLegionPreference
+            android:id="@+id/navigation_settings"
+            android:title="@string/navigation_settings_title"
+            android:fragment="com.legion.settings.NavbarSettings"
+	    android:summary="@string/navigationsettings_summary"
+	    />
+
 	<!-- Misc Settings -->
         <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/misc_settings"
