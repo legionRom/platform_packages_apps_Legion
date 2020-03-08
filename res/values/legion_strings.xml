@@ -30,6 +30,9 @@
     <string name="gesture_title">Gestures</string>
     <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
+    <string name="navigationsettings_title">Navigation Settings</string>
+    <string name="navigationsettings_summary">Navigation settings Customizations</string>
+
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
@@ -430,7 +433,7 @@
     <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
 
     <!-- Themes -->
-    <string name="theme_type_title">ColtOS themes</string>
+    <string name="theme_type_title">LegionOS themes</string>
     <string name="theme_type_summary">Select theme</string>
     <string name="theme_type_light">Light</string>
     <string name="theme_type_pitch_black">Pitch black</string>
