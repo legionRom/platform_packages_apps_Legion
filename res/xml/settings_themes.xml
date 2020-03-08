@@ -32,6 +32,15 @@
         android:defaultValue="0xffffff"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="theme_switch"
+        android:title="@string/theme_type_title"
+	android:summary="%s"
+        android:dialogTitle="@string/theme_type_summary"
+        android:entries="@array/theme_type_titles"
+        android:entryValues="@array/theme_type_values"
+        android:defaultValue="1"/>
+
     <com.legion.settings.preference.SystemSettingSwitchPreference
 	android:key="dismiss_all_button"
 	android:title="@string/enable_clear_all_button"
@@ -43,6 +52,26 @@
             android:title="@string/blur_quicksettings" 
             android:summary="@string/blur_quicksettings_subtitle" 
             android:defaultValue="true" />
+
+	<com.legion.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_blur_alpha"
+            android:title="@string/qs_blur_alpha_title"
+            android:summary="@string/qs_blur_alpha_summary"
+            android:max="100"
+            settings:min="1"
+            android:defaultValue="100"
+            settings:units="%"
+            android:dependency="qs_blur" />
+
+        <com.legion.settings.preference.CustomSeekBarPreference
+           android:key="qs_blur_intensity"
+           android:title="@string/qs_blur_intensity_title"
+           android:summary="@string/qs_blur_intensity_summary"
+           android:max="100"
+           settings:min="1"
+           settings:units="%"
+           android:persistent="false"
+           android:dependency="qs_blur" />
 
     <com.legion.settings.preference.SystemSettingSwitchPreference 
             android:key="settings_spacer" 
