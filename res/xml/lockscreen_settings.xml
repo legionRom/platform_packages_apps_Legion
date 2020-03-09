@@ -32,7 +32,7 @@
         android:defaultValue="false" />
 
 <!-- LockScreen UI -->
-<com.legion.settings.preference.CategoryLegionPreference
+<Preference
         android:key="lockscreen_ui"
         android:title="@string/lockscreen_ui_title"
         android:summary="@string/lockscreen_ui_summary"
