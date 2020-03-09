@@ -41,7 +41,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.legion.settings.preference.CustomSeekBarPreference;
 import com.legion.settings.preference.SystemSettingSwitchPreference;
 
-import com.legion.settings.utils.Utils;
+import com.android.settings.Utils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockscreenUi extends SettingsPreferenceFragment implements
