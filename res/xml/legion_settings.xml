@@ -76,7 +76,7 @@
        <!-- Navigation -->
         <com.legion.settings.preference.CategoryLegionPreference
             android:id="@+id/navigation_settings"
-            android:title="@string/navigation_settings_title"
+            android:title="@string/navigationsettings_title"
             android:fragment="com.legion.settings.NavbarSettings"
 	    android:summary="@string/navigationsettings_summary"
 	    />

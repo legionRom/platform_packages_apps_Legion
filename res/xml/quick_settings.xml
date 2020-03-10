@@ -74,6 +74,4 @@
         android:entryValues="@array/quick_pulldown_values"
         android:persistent="false" />
 
-    </PreferenceCategory>
-
 </PreferenceScreen>
