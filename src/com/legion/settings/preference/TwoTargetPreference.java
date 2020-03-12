@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.preference;
+package com.legion.settings.preference;
 
 import android.content.Context;
 import androidx.preference.Preference;

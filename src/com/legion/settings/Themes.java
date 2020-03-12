@@ -4,6 +4,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import java.util.Locale;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
@@ -33,6 +34,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
+import com.legion.settings.preference.CustomSeekBarPreference;
+import com.legion.settings.preference.SystemSettingSeekBarPreference;
+import com.legion.settings.preference.SystemSettingEditTextPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

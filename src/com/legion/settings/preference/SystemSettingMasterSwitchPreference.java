@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.colt.settings.preference;
+package com.legion.settings.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
 import com.android.settings.R;
 
-import com.colt.settings.preference.SystemSettingsStore;
+import com.legion.settings.preference.SystemSettingsStore;
 
 public class SystemSettingMasterSwitchPreference extends MasterSwitchPreference {
 
