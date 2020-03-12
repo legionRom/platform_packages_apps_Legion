@@ -19,12 +19,12 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
-import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
@@ -34,26 +34,19 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-
+import com.legion.settings.preference.CustomSeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.hwkeys.ActionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String ENABLE_NAV_BAR = "enable_nav_bar";
-
-    private SwitchPreference mEnableNavigationBar;
-    private boolean mIsNavSwitchingMode = false;
-    private Handler mHandler;
 
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
@@ -69,14 +62,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.quick_settings);
-        	final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        // Navigation bar related options
-        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
-
-	mEnableNavigationBar.setOnPreferenceChangeListener(this);
-        mHandler = new Handler();
-        updateNavBarOption();
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
@@ -110,30 +95,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
-
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-               if (preference == mEnableNavigationBar) {
-            if (mIsNavSwitchingMode) {
-                return false;
-            }
-            mIsNavSwitchingMode = true;
-            boolean isNavBarChecked = ((Boolean) newValue);
-            mEnableNavigationBar.setEnabled(false);
-            writeNavBarOption(isNavBarChecked);
-            updateNavBarOption();
-            mEnableNavigationBar.setEnabled(true);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mIsNavSwitchingMode = false;
-                }
-            }, 500);
-            return true;
-       } else if (preference == mTileAnimationStyle) {
+               if (preference == mTileAnimationStyle) {
             int tileAnimationStyle = Integer.valueOf((String) newValue);
             Settings.System.putIntForUser(resolver, Settings.System.ANIM_TILE_STYLE,
                     tileAnimationStyle, UserHandle.USER_CURRENT);
@@ -195,17 +162,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.LEGION_SETTINGS;
-    }
-
-    private void writeNavBarOption(boolean enabled) {
-        Settings.System.putIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
-    }
-
-    private void updateNavBarOption() {
-        boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
-        mEnableNavigationBar.setChecked(enabled);
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

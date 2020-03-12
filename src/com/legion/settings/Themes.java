@@ -8,6 +8,7 @@ import java.util.Locale;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.pm.ResolveInfo;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -35,7 +36,10 @@ import java.util.HashSet;
 import java.util.Objects;
 
 import com.legion.settings.preference.CustomSeekBarPreference;
+import com.android.internal.statusbar.IStatusBarService;
 import com.legion.settings.preference.SystemSettingSeekBarPreference;
+import com.legion.settings.preference.SystemSettingListPreference;
+import com.legion.settings.preference.SystemSettingSwitchPreference;
 import com.legion.settings.preference.SystemSettingEditTextPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
@@ -54,7 +58,6 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String PREF_THEME_SWITCH = "theme_switch";
-    private static final String QS_BLUR_INTENSITY = "qs_blur_intensity";
 
     private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
 
@@ -66,34 +69,29 @@ public class Themes extends SettingsPreferenceFragment implements
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mThemeSwitch;
-    private CustomSeekBarPreference mQsBlurIntensity;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.settings_themes);
+
+	mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
+	mThemeBrowse.setEnabled(isBrowseThemesAvailable());
+
+	mUiModeManager = getContext().getSystemService(UiModeManager.class);
+
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         setupAccentPref();
         setupGradientPref();
 	setupThemeSwitchPref();
 
-    mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
-    mThemeBrowse.setEnabled(isBrowseThemesAvailable());
-
-
-
-	mQsBlurIntensity = (CustomSeekBarPreference) findPreference(QS_BLUR_INTENSITY);
-        int qsBlurIntensity = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_BLUR_INTENSITY, 100, UserHandle.USER_CURRENT);
-        mQsBlurIntensity.setValue(qsBlurIntensity);
-        mQsBlurIntensity.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mThemeColor) {
+	if (preference == mThemeColor) {
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
@@ -107,10 +105,6 @@ public class Themes extends SettingsPreferenceFragment implements
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(GRADIENT_COLOR_PROP, hexColor);
-	} else if (preference == mQsBlurIntensity) {
-            int valueInt = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_BLUR_INTENSITY, valueInt);
 	} else if (preference == mThemeSwitch) {
             String theme_switch = (String) objValue;
             final Context context = getContext();

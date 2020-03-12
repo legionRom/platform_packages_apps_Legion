@@ -398,7 +398,7 @@
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
 
     <!-- Blur QS -->
-    <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
+    <string name="blur_quicksettings">Blur behind quick settings </string>
     <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
     <string name="qs_blur_alpha_title">Blur alpha</string>
     <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
@@ -477,4 +477,7 @@
     <string name="lockscreen_solid_units_count_title">Lines count</string>
     <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
     <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
+    <string name="theme_customization_sysui_icon_title">Statusbar icon</string>
+    <string name="themesui_title">ThemesUi</string>
+    <string name="themesui_summary">Ui sections</string>
 </resources>
