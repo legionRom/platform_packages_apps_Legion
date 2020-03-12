@@ -73,16 +73,12 @@ public class Themes extends SettingsPreferenceFragment implements
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
         setupAccentPref();
         setupGradientPref();
+	setupThemeSwitchPref();
 
     mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
     mThemeBrowse.setEnabled(isBrowseThemesAvailable());
 
-    mUiModeManager = getContext().getSystemService(UiModeManager.class);
 
-    mOverlayService = IOverlayManager.Stub
-                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
-        setupAccentPref();
-	setupThemeSwitchPref();
 
 	mQsBlurIntensity = (CustomSeekBarPreference) findPreference(QS_BLUR_INTENSITY);
         int qsBlurIntensity = Settings.System.getIntForUser(resolver,
@@ -188,6 +184,8 @@ public class Themes extends SettingsPreferenceFragment implements
                 : Color.parseColor("#" + colorVal);
         mGradientColor.setNewPreviewColor(color);
         mGradientColor.setOnPreferenceChangeListener(this);
+    }
+
     private void setupThemeSwitchPref() {
         mThemeSwitch = (ListPreference) findPreference(PREF_THEME_SWITCH);
         mThemeSwitch.setOnPreferenceChangeListener(this);
