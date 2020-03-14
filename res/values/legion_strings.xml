@@ -436,14 +436,15 @@
     <string name="navigation_summary">Customize navigation bar style and behavior</string>
 
     <!-- Themes -->
-    <string name="theme_type_title">ColtOS themes</string>
+    <string name="theme_type_title">DarkUi themes</string>
     <string name="theme_type_summary">Select theme</string>
     <string name="theme_type_light">Light</string>
-    <string name="theme_type_pitch_black">Pitch black</string>
-    <string name="theme_type_solarized_dark">Solarized dark</string>
+    <string name="theme_type_pitch_black">Legion Dark</string>
+    <string name="theme_type_solarized_dark">Solarized Dark</string>
     <string name="theme_type_baked_green">Baked Green</string>
     <string name="theme_type_choco_x">Choco Colt</string>
     <string name="theme_type_dark_grey">Dark Grey</string>
+    <string name="theme_type_du_pitchblack">Pitch black</string>
 
     <!-- LockScreen UI -->
     <string name="lockscreen_ui_title">Lockscreen UI</string>
