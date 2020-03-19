@@ -49,31 +49,31 @@
             android:defaultValue="false" />
 
     <!-- FOD customization options -->
-<PreferenceCategory
-        android:key="fod_icon_picker"
+  <PreferenceCategory
+        android:key="fod_icon_picker_category"
 	android:title="@string/fod_icon_picker_category_title">
 
-<Preference
-        android:key="fod_icon_picker_category"
+  <Preference
+        android:key="fod_icon_picker"
         android:title="@string/fod_icon_picker_title"
         android:summary="@string/fod_icon_picker_summary"
         android:fragment="com.legion.settings.FODIconPickerFragment" />
 
-<!-- FOD recognizing animation -->
-<com.legion.settings.preference.SystemSettingSwitchPreference
+	<!-- FOD recognizing animation -->
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="fod_recognizing_animation"
         android:title="@string/fod_recog_animation"
         android:summary="@string/fod_recog_animation_summary"
         android:defaultValue="false" />
 
 <!-- FOD use wallpaper color -->
-<com.legion.settings.preference.SystemSettingSwitchPreference
+    <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="fod_icon_wallpaper_color"
         android:title="@string/fod_wallpaper_color"
         android:summary="@string/fod_wallpaper_color_summary"
         android:defaultValue="false" />
 
-<com.legion.settings.preference.SystemSettingListPreference 
+    <com.legion.settings.preference.SystemSettingListPreference 
             android:key="fod_anim" 
             android:title="@string/fod_recog_animation_effect_title" 
             android:summary="%s" 
@@ -82,7 +82,7 @@
             android:defaultValue="0"
             android:dependency="fod_recognizing_animation" />
 
-<!-- FOD pressed state-->
+	<!-- FOD pressed state-->
         <com.legion.settings.preference.SystemSettingListPreference
             android:key="fod_pressed_state"
             android:icon="@drawable/ic_fp"
@@ -96,5 +96,6 @@
         <Preference
             android:summary="@string/fod_pressed_state_footer" />
 
-</PreferenceCategory>
+    </PreferenceCategory>
+
 </PreferenceScreen>

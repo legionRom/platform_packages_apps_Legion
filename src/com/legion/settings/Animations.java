@@ -79,8 +79,6 @@ public class Animations extends SettingsPreferenceFragment implements
     private int[] mAnimations;
     private String[] mAnimationsStrings;
     private String[] mAnimationsNum;
-    private Context mContext;
-
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
