@@ -38,7 +38,7 @@
     <PreferenceCategory
         android:title="@string/panel_porn_title">
 
-        <com.colt.settings.preference.SystemSettingSeekBarPreference
+        <com.legion.settings.preference.SystemSettingSeekBarPreference
             android:key="transparent_power_menu"
             android:title="@string/power_menu_transparency"
             android:max="100"
@@ -46,7 +46,7 @@
             settings:units="ms"
             android:defaultValue="100" />
 
-        <com.colt.settings.preference.SystemSettingSeekBarPreference
+        <com.legion.settings.preference.SystemSettingSeekBarPreference
             android:key="transparent_power_dialog_dim"
             android:title="@string/power_menu_dialog_dim"
             android:max="100"

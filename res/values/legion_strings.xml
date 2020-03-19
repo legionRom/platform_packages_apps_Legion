@@ -783,7 +783,7 @@
     <string name="power_menu_bg_filter_grayscale">Grayscale</string>
     <string name="power_menu_bg_filter_tint">Accent tinted</string>
     <string name="power_menu_bg_filter_blur">Blur</string>
-    <stringname="power_menu_bg_filter_grayblur">Grayscale and blurred</string> 
+    <string name="power_menu_bg_filter_grayblur">Grayscale and blurred</string> 
     <string name="power_menu_bg_filter_tinted_blur">Accent Tinted and blurred</string>
 
     <!-- Powermunu Background -->
@@ -795,5 +795,8 @@
     <string name="panel_porn_title">Power Menu Transparency</string>
     <string name="power_menu_transparency">Power/reboot menu opacity</string> 
     <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+
+    <string name="theme_option_reset_title">Reset Theme Options</string> 
+    <string name="theme_option_reset_message">Are you sure you want to reset themes-accent to default?</string>
 
 </resources>
