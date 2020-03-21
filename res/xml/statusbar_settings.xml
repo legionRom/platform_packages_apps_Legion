@@ -18,6 +18,12 @@
         android:summary="@string/clock_style_category_summary"
         android:fragment="com.legion.settings.ClockSettings" /> 
 
+   <Preference
+         android:key="network_traffic"
+         android:title="@string/traffic_title"
+         android:summary="@string/traffic_summary"
+         android:fragment="com.legion.settings.NetworkTraffic" />
+
 	<SwitchPreference
         android:key="show_lte_fourgee"
         android:title="@string/show_lte_fourgee_title"
