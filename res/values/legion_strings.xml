@@ -432,6 +432,16 @@
     <string name="nav_bar_tuner_title">Navigation bar options</string>
     <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
 
+    <!-- Themes -->
+    <string name="theme_type_title">LegionOS themes</string>
+    <string name="theme_type_summary">Select theme</string>
+    <string name="theme_type_light">Light</string>
+    <string name="theme_type_pitch_black">Pitch black</string>
+    <string name="theme_type_solarized_dark">Solarized dark</string>
+    <string name="theme_type_baked_green">Baked Green</string>
+    <string name="theme_type_choco_x">Choco Colt</string>
+    <string name="theme_type_dark_grey">Dark Grey</string>
+
     <!-- LockScreen UI -->
     <string name="lockscreen_ui_title">Lockscreen UI</string>
     <string name="lockscreen_ui_summary">Change the looks of Lockscreen</string>
@@ -470,7 +480,7 @@
     <string name="theme_customization_sysui_icon_title">Statusbar icon</string>
     <string name="themesui_title">ThemesUi</string>
     <string name="themesui_summary">Ui sections</string>
-
     <string name="anbi_title">Accidental touch</string>
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+
 </resources>
