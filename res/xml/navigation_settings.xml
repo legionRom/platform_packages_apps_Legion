@@ -24,6 +24,20 @@
         android:defaultValue="true"
         android:persistent="false" />
 
+<Preference 
+        android:key="gesture_system_navigation" 
+        android:title="@string/system_navigation_title" 
+        android:summary="@string/system_navigation_summary" 
+        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" 
+        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+
+    <SwitchPreference
+	    android:key="disable_nav_keys" 
+            android:title="@string/disable_navkeys_title" 
+            android:summary="@string/disable_navkeys_summary" 
+            android:defaultValue="false"
+            android:persistent="false" />
+
     <Preference
         android:key="nav_bar_tuner"
         android:title="@string/nav_bar_tuner_title"

@@ -44,9 +44,11 @@ import com.android.settings.R;
 public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
+    private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
     private static final String NAV_BAR_TUNER = "nav_bar_tuner";
 
     private SwitchPreference mEnableNavigationBar;
+    private SwitchPreference mDisableNavigationKeys;
      private Preference mNavBarTuner;
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
