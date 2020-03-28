@@ -410,4 +410,9 @@
     <string name="corner_fwvals">Use framework values</string>
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="unit_pixels">dp</string>
+
+    <string name="theme_customization_sysui_icon_title">Statusbar icon</string>
+    <string name="themesui_title">ThemesUi</string>
+    <string name="themesui_summary">Ui sections</string>
+
 </resources>
