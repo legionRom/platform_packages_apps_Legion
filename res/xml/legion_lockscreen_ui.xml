@@ -15,7 +15,7 @@
     android:title="@string/lockscreen_ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.colt.settings.preference.SecureSettingListPreference
+    <com.legion.settings.preference.SecureSettingListPreference
         android:key="lockscreen_clock_selection"
         android:title="@string/lockscreen_clock_title"
         android:dialogTitle="@string/lockscreen_clock_dialog_title"
@@ -23,7 +23,7 @@
         android:entryValues="@array/lockscreen_clock_selection_values"
         android:defaultValue="2" />
 
-    <com.colt.settings.preference.SecureSettingListPreference
+    <com.legion.settings.preference.SecureSettingListPreference
         android:key="lockscreen_date_selection"
         android:title="@string/lockscreen_date_selection_title"
         android:dialogTitle="@string/lockscreen_date_dialog_title"

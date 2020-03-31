@@ -68,7 +68,7 @@
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
 
-        <com.legion.settings.preferences.SystemSettingSwitchPreference
+        <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="anbi_enabled_option"
             android:title="@string/anbi_title"
             android:summary="@string/anbi_summary"

@@ -33,7 +33,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.legion.LegionUtils;
+import com.android.internal.util.legion.LUtils;
 import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.android.settings.R;
@@ -117,7 +117,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateNavBarOption() {
-        boolean defaultToNavigationBar = LegionUtils.deviceSupportNavigationBar(getActivity());
+        boolean defaultToNavigationBar = LUtils.deviceSupportNavigationBar(getActivity());
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.FORCE_SHOW_NAVBAR, defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mEnableNavigationBar.setChecked(enabled);
@@ -125,7 +125,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVO_SETTINGS;
+        return MetricsProto.MetricsEvent.LEGION_SETTINGS;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

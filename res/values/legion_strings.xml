@@ -434,7 +434,6 @@
     <string name="system_navigation_summary">Choose which system navigation style to use</string>
 
     <string name="navigation_summary">Customize navigation bar style and behavior</string>
-    <string name="navigation_title">Navigation</string>
 
     <!-- Themes -->
     <string name="theme_type_title">ColtOS themes</string>

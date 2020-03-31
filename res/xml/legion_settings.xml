@@ -78,7 +78,7 @@
         android:key="navigation_category"
         android:title="@string/navigation_title"
         android:summary="@string/navigation_summary"
-        android:fragment="com.legion.settings.fragments.NavigationSettings"
+        android:fragment="com.legion.settings.NavigationSettings"
            />
 
 

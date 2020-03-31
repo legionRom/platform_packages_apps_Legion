@@ -32,6 +32,15 @@
         android:defaultValue="0xffffff"
         android:persistent="false" />
 
+<ListPreference
+        android:key="theme_switch"
+        android:title="@string/theme_type_title"
+	android:summary="%s"
+        android:dialogTitle="@string/theme_type_summary"
+        android:entries="@array/theme_type_titles"
+        android:entryValues="@array/theme_type_values"
+        android:defaultValue="1"/>
+
     <com.legion.settings.preference.SystemSettingSwitchPreference
 	android:key="dismiss_all_button"
 	android:title="@string/enable_clear_all_button"
