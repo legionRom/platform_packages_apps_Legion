@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Vibrator;
 import androidx.preference.PreferenceCategory;
@@ -39,6 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.legion.settings.preference.ActionFragment;
 import com.legion.settings.preference.CustomSeekBarPreference;
+import com.legion.settings.preference.SystemSettingSwitchPreference;
 
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
 
@@ -50,7 +52,10 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
+    private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String ANBI_ENABLED_OPTION = "anbi_enabled_option";
+
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -76,6 +81,10 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
+    private SwitchPreference mDisableNavigationKeys;
+    private SystemSettingSwitchPreference mAnbiEnable;
+    private boolean mIsNavSwitchingMode = false;
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -85,6 +94,23 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mAnbiEnable = (SystemSettingSwitchPreference) findPreference(ANBI_ENABLED_OPTION);
+        mAnbiEnable.setOnPreferenceChangeListener(this);
+
+        // Force Navigation bar related options
+        mDisableNavigationKeys = (SwitchPreference) findPreference(DISABLE_NAV_KEYS);
+
+        // Only visible on devices that does not have a navigation bar already
+        if (ActionUtils.isHWKeysSupported(getActivity())) {
+            mDisableNavigationKeys.setOnPreferenceChangeListener(this);
+            mHandler = new Handler();
+            // Remove keys that can be provided by the navbar
+            updateDisableNavkeysOption();
+            setActionPreferencesEnabled(mDisableNavigationKeys.isChecked());
+        } else {
+            prefScreen.removePreference(mDisableNavigationKeys);
+        }
 
         final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
@@ -135,6 +161,7 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     }
                 }
         } else {
+            mAnbiEnable.setChecked(false);
             prefScreen.removePreference(hwkeyCat);
         }
 
@@ -195,6 +222,8 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             prefScreen.removePreference(assistCategory);
         }
 
+        mAnbiEnable.setEnabled(keysDisabled == 0);
+
         // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
 
@@ -232,7 +261,13 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
-
+            mAnbiEnable.setEnabled(!value);
+            mAnbiEnable.setChecked(!value);
+            return true;
+        } else if (preference == mAnbiEnable) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.System.ANBI_ENABLED_OPTION,
+                    value ? 1 : 0);
             return true;
         } else if (preference == mTorchPowerButton) {
             int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
@@ -250,9 +285,42 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
                     Toast.LENGTH_SHORT).show();
             }
             return true;
+        } else if (preference == mDisableNavigationKeys) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean isNavKeysChecked = ((Boolean) newValue);
+            mDisableNavigationKeys.setEnabled(false);
+            mHwKeyDisable.setEnabled(false);
+            writeDisableNavkeysOption(isNavKeysChecked);
+            updateDisableNavkeysOption();
+            int keysDisabled = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
+            setActionPreferencesEnabled(keysDisabled == 0);
+            mDisableNavigationKeys.setEnabled(true);
+            mHwKeyDisable.setEnabled(true);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1000);
+            return true;
         }
         return false;
 
+    }
+
+    private void writeDisableNavkeysOption(boolean enabled) {
+        Settings.System.putIntForUser(getActivity().getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
+    }
+
+    private void updateDisableNavkeysOption() {
+        boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0;
+        mDisableNavigationKeys.setChecked(enabled);
     }
 
     @Override
