@@ -45,7 +45,7 @@
 
     </Preference>
 
-    <com.legion.settings.preferences.SecureSettingSwitchPreference
+    <com.legion.settings.preference.SecureSettingSwitchPreference
         android:key="sysui_nav_bar_inverse"
         android:title="@string/nav_bar_invert_layout_title"
         android:defaultValue="false" />
