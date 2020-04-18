@@ -11,6 +11,12 @@
         android:summary="@string/heads_up_summary"
         android:fragment="com.legion.settings.HeadsUpSettings" />
 
+     <com.legion.settings.preference.SystemSettingSwitchPreference 
+            android:key="notification_headers" 
+            android:title="@string/notification_headers_title" 
+            android:summary="@string/notification_headers_summary"
+            android:defaultValue="true" />
+
     <com.legion.settings.preference.SystemSettingSwitchPreference
         android:key="hide_smart_replies"
         android:title="@string/hide_smart_replies_title"
