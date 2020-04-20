@@ -57,6 +57,12 @@
          android:defaultValue="0"
          android:summary="%s" />
 
+    <com.legion.settings.preference.SystemSettingSwitchPreference 
+        android:key="qs_datausage" 
+        android:title="@string/qs_datausage_title" 
+        android:summary="@string/qs_datausage_subtitle" 
+        android:defaultValue="false" />
+
     <PreferenceCategory
 	android:key="qs_category"
 	android:title="@string/qs_themes_category_title" >
