@@ -31,6 +31,7 @@
     <string name="animation_title">Animations</string>
     <string name="animation_summary">System Animations</string>
     <string name="powermenu_title">Power menu</string>
+    <string name="power_menu_items_title">Power Menu Items</string>
     <string name="powermenu_summary">Customize elements to be displayed in power menu</string>
     <string name="power_button_category_title">Power Button</string>
     <string name="volume_button_category_title">Volume Button</string>
@@ -780,4 +781,16 @@
     <string name="power_menu_animation_card">3D</string>
     <string name="power_menu_animation_translucent_top">Translucent (top)</string> 
     <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
+
+    <string name="power_menu_bg_filter_none">None</string>
+    <string name="power_menu_bg_filter_grayscale">Grayscale</string>
+    <string name="power_menu_bg_filter_tint">Accent tinted</string>
+    <string name="power_menu_bg_filter_blur">Blur</string>
+    <stringname="power_menu_bg_filter_grayblur">Grayscale and blurred</string> 
+    <string name="power_menu_bg_filter_tinted_blur">Accent Tinted and blurred</string>
+
+    <!-- Powermunu Background -->
+    <string name="power_menu_bg_title">Background Filter</string>
+    <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
+    <string name="power_menu_bg_style_title">Filter Type</string>
 </resources>
