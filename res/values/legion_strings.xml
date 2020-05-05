@@ -449,6 +449,7 @@
     <string name="theme_type_choco_x">Choco Colt</string>
     <string name="theme_type_dark_grey">Dark Grey</string>
     <string name="theme_type_du_pitchblack">Pitch black</string> 
+    <string name="theme_type_material_ocean">Material Ocean</string>
     <string name="qs_bg_use_new_tint">Tint</string>
     <string name="qs_bg_use_new_tint_summary">Enable QS tiles tint style</string>
 
