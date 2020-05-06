@@ -495,6 +495,9 @@
         <item>@string/lockscreen_clock_selection_digital</item>
         <item>@string/lockscreen_clock_selection_digital_bold</item>
         <item>@string/lockscreen_clock_selection_digital_small</item>
+	<item>@string/lockscreen_clock_selection_xperia_stock</item>
+	<item>@string/lockscreen_clock_selection_xperia_vertical</item>
+	<item>@string/lockscreen_clock_selection_xperia_vertical_bold</item>
         <item>@string/lockscreen_clock_selection_digital_accent</item>
         <item>@string/lockscreen_clock_selection_digital_accent_hour</item>
         <item>@string/lockscreen_clock_selection_digital_accent_min</item>
@@ -516,6 +519,9 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
+	<item>12</item>
+	<item>13</item>
+	<item>14</item>
     </string-array>
 
     <!-- Lockscreen date styles -->
