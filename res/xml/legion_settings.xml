@@ -73,7 +73,7 @@
 	    android:summary="@string/buttonsettings_summary"
             />
 
-    <!-- Navigation -->
+       <!-- Navigation -->
     <com.legion.settings.preference.CategoryLegionPreference
         android:key="navigation_category"
         android:title="@string/navigation_title"
@@ -81,6 +81,12 @@
         android:fragment="com.legion.settings.NavigationSettings"
            />
 
+       <!-- Animation --> 
+        <com.legion.settings.preference.CategoryLegionPreference
+            android:id="@+id/settings_animation" 
+            android:title="@string/animation_title" 
+            android:summary="@string/animation_summary"
+            android:fragment="com.legion.settings.Animations" />
 
 	<!-- Misc Settings -->
         <com.legion.settings.preference.CategoryLegionPreference
