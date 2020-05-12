@@ -15,7 +15,6 @@
  */
 package com.legion.settings;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Context;
@@ -23,6 +22,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Vibrator;
+import android.provider.Settings;
+import android.provider.SearchIndexableResource;
+
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -42,11 +44,8 @@ import com.legion.settings.preference.ActionFragment;
 import com.legion.settings.preference.CustomSeekBarPreference;
 import com.legion.settings.preference.SystemSettingSwitchPreference;
 
-public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
-
-private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
-
-    private ListPreference mTorchPowerButton;
+public class ButtonSettings extends ActionFragment implements
+        OnPreferenceChangeListener, Indexable {
 
     //Keys
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
@@ -165,14 +164,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             prefScreen.removePreference(hwkeyCat);
         }
 
-// screen off torch
-        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
-        int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
-                Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
-        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
-        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
-        mTorchPowerButton.setOnPreferenceChangeListener(this);
-
         // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
@@ -268,22 +259,6 @@ private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_ges
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(), Settings.System.ANBI_ENABLED_OPTION,
                     value ? 1 : 0);
-            return true;
-        } else if (preference == mTorchPowerButton) {
-            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
-            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
-            mTorchPowerButton.setSummary(
-                    mTorchPowerButton.getEntries()[index]);
-            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
-                    mTorchPowerButtonValue);
-            if (mTorchPowerButtonValue == 1 && DoubleTapPowerGesture) {
-                //if doubletap for torch is enabled, switch off double tap for camera
-                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
-                        1);
-                Toast.makeText(getActivity(),
-                    (R.string.torch_power_button_gesture_dt_toast),
-                    Toast.LENGTH_SHORT).show();
-            }
             return true;
         } else if (preference == mDisableNavigationKeys) {
             if (mIsNavSwitchingMode) {

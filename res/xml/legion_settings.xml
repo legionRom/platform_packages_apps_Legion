@@ -73,6 +73,15 @@
 	    android:summary="@string/buttonsettings_summary"
             />
 
+
+        <!-- PowerMenu -->
+ 	<com.colt.settings.preference.CategoryColtPreference 
+	    android:key="powermenu__category"
+            android:title="@string/powermenu_title" 
+            android:summary="@string/powermenu_summary" 
+            android:fragment="com.colt.settings.PowerMenuSettings" 
+            />
+
        <!-- Navigation -->
     <com.legion.settings.preference.CategoryLegionPreference
         android:key="navigation_category"
