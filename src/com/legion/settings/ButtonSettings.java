@@ -44,8 +44,7 @@ import com.legion.settings.preference.ActionFragment;
 import com.legion.settings.preference.CustomSeekBarPreference;
 import com.legion.settings.preference.SystemSettingSwitchPreference;
 
-public class ButtonSettings extends ActionFragment implements
-        OnPreferenceChangeListener, Indexable {
+public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
 
     //Keys
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
