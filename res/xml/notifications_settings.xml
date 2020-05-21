@@ -39,5 +39,6 @@
             android:title="@string/flashlight_on_call_wait_title" 
             android:summary="@string/flashlight_on_call_wait_summary"
             android:defaultValue="false" />
+</PreferenceCategory>
 
 </PreferenceScreen>
