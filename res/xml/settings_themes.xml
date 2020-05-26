@@ -69,6 +69,12 @@
          android:summary="@string/corners_summary"
          android:fragment="com.legion.settings.RoundedCornersSettings" />
 
+    <Preference
+	android:key="qs_new_bg_enabled"
+	android:title="qs_new_bg_enabled_title"
+	android:summary="qs_new_bg_enabled_summary"
+	android:defaultValue="true" />
+
      <Preference 
 	android:key="themesui"
         android:title="@string/themesui_title" 
