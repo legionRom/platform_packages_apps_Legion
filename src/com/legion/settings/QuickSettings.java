@@ -50,11 +50,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
-    private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
 
     private ListPreference mQuickPulldown;
-    private CustomSeekBarPreference mQsPanelAlpha;
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -69,12 +66,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
 
-	mQsPanelAlpha = (CustomSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
-        int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_PANEL_BG_ALPHA, 255);
-        mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
-        mQsPanelAlpha.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -85,12 +76,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
-            return true;
-    } else if (preference == mQsPanelAlpha) {
-    int bgAlpha = (Integer) newValue;
-    int trueValue = (int) (((double) bgAlpha / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, trueValue);
             return true;
     }
 	    return false;

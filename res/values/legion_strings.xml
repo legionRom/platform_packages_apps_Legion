@@ -627,10 +627,6 @@
     <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
     <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
 
-    <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">Quick Settings opacity</string>
-    <string name="qs_panel_alpha_summary">Configure opacity of background</string>
-
     <!--Qs Backgroumd Primary -->
     <string name="qs_new_bg_enabled_title">Gradient Qs Background</string>
     <string name="qs_new_bg_enabled_summary">Enable Qs Background Primary</string>
