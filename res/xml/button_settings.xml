@@ -18,10 +18,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_settings_title" >
-	
-    <PreferenceCategory
-        android:key="power_button_category"
-        android:title="@string/power_button_category_title" />
 
     <PreferenceCategory
         android:key="volume_button_category"
