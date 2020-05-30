@@ -74,7 +74,7 @@ public class StatusbarHeader extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.XTENSIONS;
+        return MetricsEvent.LEGION_SETTINGS;
     }
 
     @Override

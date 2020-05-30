@@ -35,5 +35,4 @@
          android:title="@string/battery_mode_title" 
          android:summary="@string/battery_mode_summary" 
          android:fragment="com.legion.settings.XBatteryMode" />
-        </Preference>
 </PreferenceScreen>
