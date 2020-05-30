@@ -26,13 +26,6 @@
         settings:min="0"
         settings:units="" />
 
-    <com.legion.settings.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_hidearrow"
-        android:title="@string/network_traffic_hidearrow"
-        android:summary="@string/network_traffic_hidearrow_summary"
-        android:dependency="network_traffic_state"
-        android:defaultValue="false" />
-
 	<Preference
 	android:key="clock_settings"
         android:title="@string/clock_style_category_title"
