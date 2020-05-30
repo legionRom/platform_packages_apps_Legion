@@ -669,7 +669,7 @@
     <string name="qs_bg_use_fw">Use default colors</string>
     <string name="qs_bg_use_fw_summary">Disable custom QS styles for external theme engines</string>
     <string name="qs_bg_accent_title">Use Accent color</string>
-    <stringname="qs_bg_accent_summary">Set QS background color from System Accent</string>
+    <string name="qs_bg_accent_summary">Set QS background color from System Accent</string>
 
     <!-- QS DataUsage Toggle -->
     <string name="qs_datausage_title">Show data usage in qs header</string>
