@@ -58,6 +58,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String PREF_THEME_SWITCH = "theme_switch";
+    private static final String QS_HEADER_STYLE = "qs_header_style";
     private static final int MENU_RESET = Menu.FIRST;
 
     static final int DEFAULT = 0xff1a73e8;
@@ -72,6 +73,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mThemeSwitch;
+    private ListPreference mQsHeaderStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -89,6 +91,7 @@ public class Themes extends SettingsPreferenceFragment implements
         setupAccentPref();
         setupGradientPref();
         setupThemeSwitchPref();
+        getQsHeaderStylePref();
         setHasOptionsMenu(true);
     }
 
@@ -108,7 +111,13 @@ public class Themes extends SettingsPreferenceFragment implements
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(GRADIENT_COLOR_PROP, hexColor);
-	} else if (preference == mThemeSwitch) {
+        } else if (preference == mQsHeaderStyle) {
+            String value = (String) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+			    Settings.System.QS_HEADER_STYLE, Integer.valueOf(value));
+            int newIndex = mQsHeaderStyle.findIndexOfValue(value);
+            mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntries()[newIndex]);
+        } else if (preference == mThemeSwitch) {
             String theme_switch = (String) objValue;
             final Context context = getContext();
             switch (theme_switch) {
@@ -213,6 +222,16 @@ public class Themes extends SettingsPreferenceFragment implements
         mGradientColor.setNewPreviewColor(color);
         mGradientColor.setOnPreferenceChangeListener(this);
      }
+
+    private void getQsHeaderStylePref() {
+        mQsHeaderStyle = (ListPreference) screen.findPreference(QS_HEADER_STYLE);
+        int qsHeaderStyle = Settings.System.getInt(getActivity.getContentResolver(),
+                Settings.System.QS_HEADER_STYLE, 0);
+        int valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
+        mQsHeaderStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
+        mQsHeaderStyle.setOnPreferenceChangeListener(this);
+    }
 
     private void setupThemeSwitchPref() {
         mThemeSwitch = (ListPreference) findPreference(PREF_THEME_SWITCH);
