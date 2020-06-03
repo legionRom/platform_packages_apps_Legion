@@ -35,6 +35,7 @@ import java.util.HashSet;
 import java.util.Objects;
 
 import com.legion.settings.preference.CustomSeekBarPreference;
+import com.legion.settings.preference.SystemSettingSwitchPreference;
 import com.legion.settings.preference.SystemSettingSeekBarPreference;
 import com.legion.settings.preference.SystemSettingEditTextPreference;
 import com.android.settings.SettingsPreferenceFragment;
@@ -54,6 +55,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String PREF_THEME_SWITCH = "theme_switch";
+    private static final String PREF_QSBG_NEW_TINT = "qs_panel_bg_use_new_tint";
 
     private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
 
@@ -65,6 +67,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mThemeSwitch;
+    private SystemSettingSwitchPreference mQsBgNewTint;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -82,6 +85,12 @@ public class Themes extends SettingsPreferenceFragment implements
         setupAccentPref();
         setupGradientPref();
 	setupThemeSwitchPref();
+
+	mQsBgNewTint = (SystemSettingSwitchPreference) findPreference(PREF_QSBG_NEW_TINT);
+        mQsBgNewTint.setChecked((Settings.System.getInt(getActivity().getContentResolver(), 
+                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 1) == 1));
+        mQsBgNewTint.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -100,6 +109,13 @@ public class Themes extends SettingsPreferenceFragment implements
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(GRADIENT_COLOR_PROP, hexColor);
+
+	} else if (preference == mQsBgNewTint) {
+	boolean value = (Boolean) newValue;
+	Settings.System.putInt(getActivity().getContentResolver(),
+		Settings.System.QS_PANEL_BG_USE_NEW_TINT, value ? 1 : 0);
+	LegionUtils.showSystemUiRestartDialog(getContext());
+	return true;
 	} else if (preference == mThemeSwitch) {
             String theme_switch = (String) objValue;
             final Context context = getContext();

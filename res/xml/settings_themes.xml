@@ -75,6 +75,12 @@
             android:summary="@string/qs_new_bg_enabled_summary"
             android:defaultValue="false" />
 
+    <com.legion.settings.preference.SystemSettingSwitchPreference 
+            android:key="qs_panel_bg_use_new_tint" 
+            android:title="@string/qs_bg_use_new_tint" 
+            android:summary="@string/qs_bg_use_new_tint_summary"
+            android:defaultValue="false" />
+
      <Preference 
 	android:key="themesui"
         android:title="@string/themesui_title" 
