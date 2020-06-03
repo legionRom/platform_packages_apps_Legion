@@ -37,6 +37,22 @@
             android:key="android.theme.customization.icon_pack.android"
             android:title="@string/theme_customization_sysui_icon_title"/>
 
+	<ListPreference
+	    android:key="android.theme.customization.pill_gesture"
+            android:title="@string/theme_customization_pill_gesture_title"/>
+
+	<ListPreference
+	    android:key="android.theme.customization.statusbar_height"
+            android:title="@string/theme_customization_statusbar_height_title"/>
+
+	<ListPreference
+	    android:key="android.theme.customization.ui_radius"
+            android:title="@string/theme_customization_ui_radius_title"/>
+
+	<ListPreference
+  	    android:key="android.theme.customization.ui_radius_vol"
+            android:title="@string/theme_customization_ui_radius_vol_title"/>
+
         <com.legion.settings.preference.SystemSettingSwitchPreference
             android:key="qs_blur"
             android:title="@string/blur_quicksettings"

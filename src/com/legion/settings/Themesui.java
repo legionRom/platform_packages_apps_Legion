@@ -74,6 +74,14 @@ public class Themesui extends DashboardFragment implements Indexable  {
                 "android.theme.customization.icon_pack.android"));
         controllers.add(new QsBlurAlphaPreferenceController(context));
         controllers.add(new QsBlurIntensityPreferenceController(context));
+	controllers.add(new OverlayCategoryPreferenceController(context,
+		"android.theme.customization.pill_gesture"));
+	controllers.add(new OverlayCategoryPreferenceController(context,
+		"android.theme.customization.statusbar_height"));
+	controllers.add(new OverlayCategoryPreferenceController(context,
+		"android.theme.customization.ui_radius"));
+	controllers.add(new OverlayCategoryPreferenceController(context,
+		"android.theme.customization.ui_radius_vol"));
         return controllers;
     }
 

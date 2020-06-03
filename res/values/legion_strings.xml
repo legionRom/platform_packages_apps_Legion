@@ -692,4 +692,9 @@
     <string name="network_traffic_location_title">Traffic indicator placement</string>
     <string name="network_traffic_location_summary">Place indicator in either status bar or expanded header (recommended for displays with notch cutouts)</string>
 
+    <!- GVM-->
+    <string name="theme_customization_pill_gesture_title">Pill gesture</string>
+    <string name="theme_customization_statusbar_height_title">Statusbar height</string>
+    <string name="theme_customization_ui_radius_title">UI radius</string>
+    <string name="theme_customization_ui_radius_vol_title">UI radius volume</string>
 </resources>
