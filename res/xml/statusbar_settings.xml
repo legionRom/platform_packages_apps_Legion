@@ -35,4 +35,11 @@
         android:title="@string/battery_style_title" 
         android:summary="@string/battery_style_summary"
         android:fragment="com.legion.settings.StatusBarBattery" />
+
+        <com.legion.settings.preference.SystemSettingMasterSwitchPreference
+            android:key="statusbar_battery_bar"
+            android:fragment="com.legion.settings.BatteryBar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:defaultValue="false" />
 </PreferenceScreen>

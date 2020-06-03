@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -46,8 +47,13 @@ import java.util.List;
 public class StatusbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
+    private static final String BATTERY_BAR = "statusbar_battery_bar";
 
     private SwitchPreference mShowLteFourGee;
+    private SystemSettingMasterSwitchPreference mBatteryBar;
+
+    private boolean mIsBarSwitchingMode = false;
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,10 +61,17 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements OnP
         addPreferencesFromResource(R.xml.statusbar_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        mHandler = new Handler();
+
         mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
         mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
         mShowLteFourGee.setOnPreferenceChangeListener(this);
+
+        mBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_BAR);
+        mBatteryBar.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR, 0) == 1));
+        mBatteryBar.setOnPreferenceChangeListener(this);
     }
 
    @Override
@@ -73,6 +86,22 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements OnP
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_LTE_FOURGEE, value ? 1 : 0);
+            return true;
+	} else if (preference == mBatteryBar) {
+            if (mIsBarSwitchingMode) {
+                return false;
+            }
+            mIsBarSwitchingMode = true;
+            boolean showing = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
+            mBatteryBar.setChecked(showing);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsBarSwitchingMode = false;
+                }
+            }, 1500);
             return true;
         }
         return false;
