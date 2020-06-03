@@ -438,8 +438,6 @@
     <string name="theme_type_dark_grey">Dark Grey</string>
     <string name="theme_type_du_pitchblack">Pitch black</string> 
     <string name="theme_type_material_ocean">Material Ocean</string>
-    <string name="qs_bg_use_new_tint">Tint</string>
-    <string name="qs_bg_use_new_tint_summary">Enable QS tiles tint style</string>
 
     <!-- LockScreen UI -->
     <string name="lockscreen_ui_title">Lockscreen UI</string>
@@ -697,4 +695,11 @@
     <string name="theme_customization_statusbar_height_title">Statusbar height</string>
     <string name="theme_customization_ui_radius_title">UI radius</string>
     <string name="theme_customization_ui_radius_vol_title">UI radius volume</string>
+
+    <string name="qs_bg_use_new_tint">QS Tint Mode</string>
+    <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
+    <string name="qs_tint_off">Tint Off</string>
+    <string name="qs_tint_random">Random Color Tint</string>
+    <string name="qs_tint_accent">Accent Color Tint</string>
+    <string name="qs_disco_mode">Qs Disco Mode</string>
 </resources>
