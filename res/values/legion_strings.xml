@@ -690,7 +690,7 @@
     <string name="network_traffic_location_title">Traffic indicator placement</string>
     <string name="network_traffic_location_summary">Place indicator in either status bar or expanded header (recommended for displays with notch cutouts)</string>
 
-    <!- GVM-->
+    <!-- GVM -->
     <string name="theme_customization_pill_gesture_title">Pill gesture</string>
     <string name="theme_customization_statusbar_height_title">Statusbar height</string>
     <string name="theme_customization_ui_radius_title">UI radius</string>
@@ -702,4 +702,11 @@
     <string name="qs_tint_random">Random Color Tint</string>
     <string name="qs_tint_accent">Accent Color Tint</string>
     <string name="qs_disco_mode">Qs Disco Mode</string>
+
+    <!-- QS Label Tint -->
+    <string name="qs_label_use_new_tint">QS Label Tint</string>
+    <string name="qs_label_tint_off">Default</string>
+    <string name="qs_label_tint_random">Random Color Tint</string>
+    <string name="qs_label_tint_accent">Accent Color Tint</string>
+    <string name="qs_label_tint_gradient">Gradient Color Tint</string>
 </resources>
