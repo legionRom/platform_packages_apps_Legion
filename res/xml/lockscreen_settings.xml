@@ -89,4 +89,5 @@
         <Preference
             android:summary="@string/fod_pressed_state_footer" />
 
+</PreferenceCategory>
 </PreferenceScreen>

@@ -24,13 +24,19 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.SwitchPreference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.legion.settings.preference.CustomSeekBarPreference;
 import com.legion.settings.preference.SecureSettingMasterSwitchPreference;
 
 public class LockscreenSettings extends SettingsPreferenceFragment implements
@@ -41,6 +47,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private Preference mFODIconPicker;
     private static final String FOD_ANIMATION = "fod_anim";
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+    private PreferenceCategory mFODIconPickerCategory;
     private Preference mFODAnimation;
 
     @Override
@@ -49,6 +56,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
         ContentResolver resolver = getActivity().getContentResolver();
+	final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
         Context mContext = getContext();
 
@@ -58,13 +66,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
 
-	mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
+	mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPicker != null
                 && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
-            prefScreen.removePreference(mFODIconPicker);
+            prefScreen.removePreference(mFODIconPickerCategory);
         }
 
-  boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
+	boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
         mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
         if ((mFODIconPickerCategory != null && mFODAnimation != null &&
              !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) ||
