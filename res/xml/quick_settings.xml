@@ -56,16 +56,22 @@
         android:summary="@string/qs_datausage_subtitle" 
         android:defaultValue="false" />
 
-    <PreferenceCategory
-	android:key="qs_category"
-	android:title="@string/qs_themes_category_title" >
+    <com.legion.settings.preference.CustomSeekBarPreference 
+        android:key="qs_panel_alpha" 
+        android:title="@string/qs_panel_alpha_title" 
+        android:summary="@string/qs_panel_alpha_summary"
+	android:max="100"
+        settings:min="0"
+	android:defaultValue="100"
+        android:persistent="false" />
 
     <Preference
- 	 android:key="category_custom_header" 
+	android:key="category_custom_header" 
          android:title="@string/statusbar_header_category_title" 
          android:summary="@string/statusbar_header_category_summary" 
          android:fragment="com.legion.settings.StatusbarHeader" />
 
+<<<<<<< HEAD
         <com.legion.settings.preference.CustomSeekBarPreference
             android:key="qs_panel_alpha" 
             android:title="@string/qs_panel_alpha_title" 
@@ -75,7 +81,7 @@
 	    android:defaultValue="100" 
             android:persistent="false" />
 
-        <com.legion.settings.preference.SystemSettingSwitchPreference 
+   <!--     <com.legion.settings.preference.SystemSettingSwitchPreference 
             android:key="qs_panel_bg_use_fw" 
             android:title="@string/qs_bg_use_fw" 
             android:summary="@string/qs_bg_use_fw_summary" 
@@ -102,5 +108,7 @@
             android:defaultValue="0xffffff"
 	    android:persistent="false" 
             android:dependency="qs_panel_bg_use_fw" />
+-->
     </PreferenceCategory>
+
 </PreferenceScreen>
