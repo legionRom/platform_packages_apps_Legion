@@ -42,7 +42,7 @@
         android:defaultValue="0xffffff"
         android:persistent="false" />
 
-<ListPreference
+    <ListPreference
         android:key="theme_switch"
         android:title="@string/theme_type_title"
 	android:summary="%s"
@@ -69,23 +69,94 @@
          android:summary="@string/corners_summary"
          android:fragment="com.legion.settings.RoundedCornersSettings" />
 
+    <com.legion.settings.preference.SystemSettingListPreference
+        android:key="switch_style"
+        android:title="@string/switch_style_title"
+        android:dialogTitle="@string/switch_style_title"
+        android:entries="@array/switch_style_entries"
+        android:entryValues="@array/switch_style_values"
+        android:summary="%s"
+        android:defaultValue="0" />
+
+    <PreferenceCategory
+        android:key="qs_tweaks_category"
+        android:title="QS Tweaks">
+
+    <com.legion.settings.preference.SystemSettingListPreference
+            android:key="qs_panel_bg_use_new_tint"
+            android:title="@string/qs_bg_use_new_tint"
+            android:dialogTitle="@string/qs_bg_use_new_tint" 
+            android:entries="@array/qs_tint_entries" 
+            android:entryValues="@array/qs_tint_values" 
+            android:summary="%s"
+            android:defaultValue="1" />
+
+    <com.legion.settings.preference.SystemSettingListPreference 
+            android:key="qs_label_use_new_tint" 
+            android:title="@string/qs_label_use_new_tint" 
+            android:dialogTitle="@string/qs_label_use_new_tint" 
+            android:entries="@array/qs__label_tint_entries" 
+            android:entryValues="@array/qs_label_tint_values" 
+            android:summary="%s"
+            android:defaultValue="1" />
+
     <com.legion.settings.preference.SystemSettingSwitchPreference 
             android:key="qs_new_bg_enabled" 
             android:title="@string/qs_new_bg_enabled_title" 
             android:summary="@string/qs_new_bg_enabled_summary"
             android:defaultValue="false" />
 
-     <Preference 
-	android:key="themesui"
-        android:title="@string/themesui_title" 
-        android:summary="@string/themesui_summary"
-        android:fragment="com.legion.settings.Themesui" />
-
      <ListPreference
 	android:key="qs_header_style" 
         android:title="@string/qs_header_style_title" 
+
         android:persistent="false" 
         android:entries="@array/qs_header_style_entries" 
         android:entryValues="@array/qs_header_style_values" />
+
+  </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="QS Blur">
+
+        <com.legion.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_blur"
+            android:title="@string/blur_quicksettings"
+            android:summary="@string/blur_quicksettings_subtitle"
+            android:defaultValue="true" />
+
+        <com.legion.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_blur_alpha"
+            android:title="@string/qs_blur_alpha_title"
+            android:summary="@string/qs_blur_alpha_summary"
+            android:max="100"
+            settings:min="1"
+            settings:units="%"
+            android:persistent="false"
+            android:dependency="qs_blur" />
+
+        <com.legion.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_blur_intensity"
+            android:title="@string/qs_blur_intensity_title"
+            android:summary="@string/qs_blur_intensity_summary"
+            android:max="100"
+            settings:min="1"
+            settings:units="%"
+            android:persistent="false"
+            android:dependency="qs_blur" />
+
+  </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="Ui_category"
+        android:title="More UI">
+
+     <Preference
+        android:key="themesui"
+        android:title="@string/themesui_title"
+        android:summary="@string/themesui_summary"
+        android:fragment="com.legion.settings.Themesui" />
+
+  </PreferenceCategory>
 
 </PreferenceScreen>

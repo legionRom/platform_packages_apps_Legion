@@ -886,4 +886,11 @@
     <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
     <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
 
+    <!-- Switch styles -->
+    <string name="switch_style_title">Switch Styles</string>
+    <string name="switch_default">Default</string>
+    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_narrow">Narrow</string>
+    <string name="switch_contained">Contained</string>
+
 </resources>
