@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
-        <com.legion.settings.preference.SecureSettingSwitchPreference
+    <com.legion.settings.preference.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
@@ -30,6 +30,7 @@
         android:title="@string/qs_show_brightness_title"
         android:summary="@string/qs_show_brightness_summary"
         android:defaultValue="true" />
+
     <com.legion.settings.preference.SecureSettingSwitchPreference
         android:key="qs_brightness_position_bottom"
         android:title="@string/qs_brightness_position_bottom_title"
@@ -70,14 +71,5 @@
          android:title="@string/statusbar_header_category_title" 
          android:summary="@string/statusbar_header_category_summary" 
          android:fragment="com.legion.settings.StatusbarHeader" />
-
-        <com.legion.settings.preference.CustomSeekBarPreference
-            android:key="qs_panel_alpha" 
-            android:title="@string/qs_panel_alpha_title" 
-            android:summary="@string/qs_panel_alpha_summary" 
-            android:max="100"
-	    settings:min="0"
-	    android:defaultValue="100" 
-            android:persistent="false" />
 
 </PreferenceScreen>
