@@ -900,5 +900,15 @@
     <string name="qstile_circle_trim">Circle with trim</string>
     <string name="qstile_dual_tone_circle">Dual-toned circle</string>
     <string name="qstile_squircle_trim">Squircle with trim</string>
-
+    <string name="qstile_wavey">Wavey</string>
+    <string name="qstile_pokesign">Pokesign</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Dotted Circle</string>
+    <string name="qstile_attemptmountain">An attempt of a mountain</string>
+    <string name="qstile_squaremedo">The Squaremedo</string>
+    <string name="qstile_inkdrop">Ink</string>
+    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_circleoutline">CircleOutline</string>
+    <string name="qstile_neon">Neon Light</string>
+    <string name="qstile_triangle">Triangle</string>
 </resources>
