@@ -34,25 +34,25 @@
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
 
-        <com.legion.settings.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_light_low_color"
             android:title="@string/battery_light_low_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFF0000" />
 
-        <com.legion.settings.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_light_medium_color"
             android:title="@string/battery_light_medium_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
-        <com.legion.settings.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_light_full_color"
             android:title="@string/battery_light_full_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
-        <com.legion.settings.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_light_reallyfull_color"
             android:title="@string/battery_light_reallyfull_color"
             ledPreview="true"

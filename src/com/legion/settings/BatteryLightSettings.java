@@ -31,7 +31,7 @@ import com.legion.settings.preference.SystemSettingSwitchPreference;
 import com.android.settings.lR;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.legion.settings.colorpicker.ColorPickerPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class BatteryLightSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
