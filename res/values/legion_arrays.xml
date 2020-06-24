@@ -384,8 +384,8 @@
         <item>@string/theme_type_solarized_dark</item>
 	<item>@string/theme_type_baked_green</item>
         <item>@string/theme_type_choco_x</item>
-	<item>@string/theme_type_dark_grey</item>
 	<item>@string/theme_type_du_pitchblack</item>
+        <item>@string/theme_type_dark_grey</item>
 	<item>@string/theme_type_material_ocean</item>
     </string-array>
 
