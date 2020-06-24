@@ -47,7 +47,7 @@
 
         <com.legion.settings.preference.SystemSettingMasterSwitchPreference
             android:key="battery_light_enabled"
-            android:fragment="com.havoc.config.center.fragments.BatteryLightSettings"
+            android:fragment="com.legion.settings.BatteryLightSettings"
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_settings_summary"
             android:defaultValue="true" />

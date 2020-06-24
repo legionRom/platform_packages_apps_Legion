@@ -44,6 +44,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.legion.settings.preference.SystemSettingMasterSwitchPreference;
+
 public class StatusbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
@@ -92,7 +94,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements OnP
                 return false;
             }
             mIsBarSwitchingMode = true;
-            boolean showing = (Boolean) newValue;
+            boolean showing = (Boolean) objValue;
             Settings.System.putIntForUser(getActivity().getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR,
                     showing ? 1 : 0, UserHandle.USER_CURRENT);
             mBatteryBar.setChecked(showing);

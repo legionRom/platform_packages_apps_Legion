@@ -61,7 +61,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mBatteryLightEnabled) {
-            boolean value = (Boolean) newValue;
+            boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(),
 		            BATTERY_LIGHT_ENABLED, value ? 1 : 0);
             return true;

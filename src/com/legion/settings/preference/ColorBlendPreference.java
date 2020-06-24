@@ -32,8 +32,8 @@ import android.widget.TextView;
 
 import com.android.internal.util.legion.LegionUtils;
 
-import com.havoc.support.R;
-import com.havoc.support.colorpicker.ColorPickerDialog;
+import com.legion.settings.R;
+import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 public class ColorBlendPreference extends Preference
         implements Preference.OnPreferenceClickListener {

@@ -28,7 +28,7 @@ import android.provider.Settings;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.legion.settings.preference.SystemSettingSwitchPreference;
-import com.android.settings.lR;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
